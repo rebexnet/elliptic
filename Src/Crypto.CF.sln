@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BouncyCastle.CF", "..\external\bouncyeccf\crypto\src\BouncyCastle.CF.csproj", "{5C157F1B-5CB9-4A43-871C-16A9647A203A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebex.Castle.CF", "Rebex.Castle\Rebex.Castle.CF.csproj", "{758682C8-5EA0-4CBA-AF03-6A70B3266CF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebex.Curve25519.CF", "Rebex.Curve25519\Rebex.Curve25519.CF.csproj", "{53073728-A1DB-4A6F-9AEE-47D9246A6102}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C157F1B-5CB9-4A43-871C-16A9647A203A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C157F1B-5CB9-4A43-871C-16A9647A203A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C157F1B-5CB9-4A43-871C-16A9647A203A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C157F1B-5CB9-4A43-871C-16A9647A203A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{758682C8-5EA0-4CBA-AF03-6A70B3266CF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{758682C8-5EA0-4CBA-AF03-6A70B3266CF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{758682C8-5EA0-4CBA-AF03-6A70B3266CF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{758682C8-5EA0-4CBA-AF03-6A70B3266CF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53073728-A1DB-4A6F-9AEE-47D9246A6102}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53073728-A1DB-4A6F-9AEE-47D9246A6102}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53073728-A1DB-4A6F-9AEE-47D9246A6102}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53073728-A1DB-4A6F-9AEE-47D9246A6102}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

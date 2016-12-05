@@ -1,0 +1,31 @@
+﻿{
+  "version": "1.0.1-*",
+
+  "authors": [
+    "Rebex CR, s.r.o."
+  ],
+
+  "description": "Wrapper around BouncyCastle library that provides a simple API for Elliptic Curve algorithms",
+
+  "dependencies": {
+    "Portable.BouncyCastle": "1.8.1.1"
+  },
+
+  "frameworks": {
+    ".NETPortable,Version=v4.0,Profile=Profile328": {
+      "frameworkAssemblies": {
+        "mscorlib": ""
+      }
+    },
+    "netstandard1.6": {
+      "imports": "dnxcore50",
+      "dependencies": {
+        "NETStandard.Library": "1.6.0"
+      }
+    }
+  },
+
+  "buildOptions": {
+    "xmlDoc": true
+  }
+}

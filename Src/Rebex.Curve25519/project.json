@@ -1,0 +1,32 @@
+{
+  "version": "1.0.1-*",
+
+  "authors": [
+    "Rebex CR, s.r.o."
+  ],
+
+  "description": "Managed implementation of Curve25519 key exchange algorithm",
+
+  "frameworks": {
+    "net20": {
+      "frameworkAssemblies": {
+        "mscorlib": ""
+      }
+    },
+    "net40": {
+      "frameworkAssemblies": {
+        "mscorlib": ""
+      }
+    },
+    "netstandard1.6": {
+      "imports": "dnxcore50",
+      "dependencies": {
+        "NETStandard.Library": "1.6.0"
+      }
+    }
+  },
+
+  "buildOptions": {
+    "xmlDoc": true
+  }
+}

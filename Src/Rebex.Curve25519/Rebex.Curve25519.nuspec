@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Rebex.Curve25519</id>
+    <version>1.0.1</version>
+    <authors>Rebex CR, s.r.o.</authors>
+    <owners>Rebex CR, s.r.o.</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Managed implementation of Curve25519 key exchange algorithm</description>
+    <tags></tags>
+    <dependencies>
+      <group targetFramework=".NETFramework2.0" />
+      <group targetFramework=".NETFramework4.0" />
+      <group targetFramework=".NETStandard1.6">
+        <dependency id="NETStandard.Library" version="[1.6.0, )" />
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="mscorlib" targetFramework=".NETFramework2.0" />
+      <frameworkAssembly assemblyName="mscorlib" targetFramework=".NETFramework4.0" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

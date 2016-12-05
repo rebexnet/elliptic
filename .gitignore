@@ -1,0 +1,80 @@
+# Ignore file for Visual Studio
+# http://blogs.planetcloud.co.uk/mygreatdiscovery/post/Mercurial-ignore-file.aspx
+# http://stackoverflow.com/questions/34784/mercurial-setup-for-visual-studio-2008-projects
+ 
+# use glob syntax
+# syntax: glob
+
+packages/*
+.paket/*
+tmp/
+
+# Ignore Visual Studio files
+*.obj
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*.vshost.*
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+*.tlog
+*.idb
+*.sdf
+*.opensdf
+*.embed.*
+*.intermediate.*
+*.lastbuildstate
+*_manifest.rc
+*.ipch
+*.lib
+*.sbr
+*.scc
+*.VC.db
+*.VC.opendb
+[Bb]in
+[Dd]ebug/
+obj/
+[Rr]elease/
+_ReSharper*/
+[Bb]uild[Ll]og.*
+*.[Pp]ublish.xml
+[Oo]ut/*
+tmp/*
+.vs/**
+.hg/**
+Shared/nant/
+[Ss]hared/nant/*.dll	
+[Ss]hared/nant/*.pdb
+[Ss]hared/nant/*.xml
+*.sln.docstates
+TestsCF.Result/
+
+# NuGet files
+[Ss]rc/**/project.lock.json
+*.nuget.targets
+
+# t4 templates output
+*.tt.html
+*.tt.txt
+*.tt.config
+*.tt.md
+Doc/Product.Package/**/layout/
+Doc/Product.Web/Sample/*/**
+Doc/Product.Web/Support/Tutorial/*/**
+
+# Ignore Mono files
+*.userprefs
+
+# Ignore Mac files
+*.DS_Store
+Doc/packages/*

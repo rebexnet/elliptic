@@ -1,0 +1,4 @@
+[submodule "external/bouncyeccf"]
+	path = external/bouncyeccf
+	url = https://github.com/rebexnet/BouncyECCF.git
+	branch = master

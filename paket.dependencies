@@ -1,0 +1,8 @@
+source https://nuget.org/api/v2
+
+# Build tools
+nuget NAnt
+
+# Project dependencies
+nuget Mono.Cecil
+nuget Portable.BouncyCastle 1.8.1.2
