@@ -27,8 +27,25 @@
 		</delete>
 	</target>
 
-	<target name="bin" depends="bin.retarget,bin.castle,bin.curve25519,bin.ed25519,bin.ed25519.cf,pack-all">
+	<target name="bin" depends="restore,bin.retarget,bin.castle,bin.curve25519,bin.ed25519,bin.ed25519.cf,pack-all">
 	</target>
+    
+    <target name="restore">
+        <echo message="Restoring packages and dependencies..." />
+        
+        <exec program="dotnet" verbose="true">
+			<arg value="restore" />
+		</exec>
+        
+        <if test="${not file::exists('../external/bouncyeccf/.git')}">
+            <exec program="git">
+                <arg line="submodule init" />
+            </exec>
+            <exec program="git">
+                <arg line="submodule update --recursive --remote" />
+            </exec>
+        </if>
+    </target>
     
     <target name="pack-all">
         <zip zipfile="../out/RebexEllipticCurvePlugins.zip">
@@ -80,7 +97,7 @@
 	
 	<target name="bin.castle">
         <echo message="Building Rebex.Castle for .NET Core..." />
-
+        
 		<exec program="dotnet" verbose="true" workingdir="Rebex.Castle">
 			<arg value="build" />
 			<arg value="-c" />
