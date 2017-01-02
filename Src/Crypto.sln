@@ -17,7 +17,7 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Rebex.Castle", "Rebex.Castl
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Rebex.Ed25519", "Rebex.Ed25519", "{E10A9049-B7EB-401B-BD48-D2C43E8B5AED}"
 	ProjectSection(SolutionItems) = preProject
-		Rebex.Ed25519\Rebex.Ed25519.nuspec = Rebex.Ed25519\Rebex.Ed25519.nuspec
+		Rebex.Ed25519\Rebex.Elliptic.Ed25519.nuspec = Rebex.Ed25519\Rebex.Elliptic.Ed25519.nuspec
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{CB5DDD83-A7E8-4D77-BA6F-771B63DBC904}"
@@ -29,6 +29,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{A6A85FE4
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Retarget", "Retarget\Retarget.csproj", "{F3F0BEE6-6044-47CD-8607-7F2270570DBB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuspec", "nuspec", "{C588C92E-8D1C-4418-9F24-D40BDF709B6B}"
+	ProjectSection(SolutionItems) = preProject
+		Rebex.Castle\Rebex.Elliptic.Castle.nuspec = Rebex.Castle\Rebex.Elliptic.Castle.nuspec
+		Rebex.Curve25519\Rebex.Elliptic.Curve25519.nuspec = Rebex.Curve25519\Rebex.Elliptic.Curve25519.nuspec
+		Rebex.Ed25519\Rebex.Elliptic.Ed25519.nuspec = Rebex.Ed25519\Rebex.Elliptic.Ed25519.nuspec
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

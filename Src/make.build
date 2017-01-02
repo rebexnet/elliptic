@@ -141,7 +141,7 @@
 			</fileset>
 		</copy>
         
-        <copy file="Rebex.Castle/Rebex.Castle.nuspec" tofile="../tmp/Rebex.Castle/Rebex.Castle.nuspec" />
+        <copy file="Rebex.Castle/Rebex.Elliptic.Castle.nuspec" tofile="../tmp/Rebex.Castle/Rebex.Elliptic.Castle.nuspec" />
         
         <exec program="nuget " verbose="false" workingdir="../tmp/Rebex.Castle"> -->
 			<arg value="pack" />
@@ -149,7 +149,7 @@
         
         <copy todir="../out" flatten="true">
 			<fileset basedir="../tmp/Rebex.Castle">
-				<include name="Rebex.Castle.*.nupkg" />
+				<include name="Rebex.Elliptic.Castle.*.nupkg" />
 			</fileset>
 		</copy>
 	</target>
@@ -178,7 +178,7 @@
 			</fileset>
 		</copy>
         
-        <copy file="Rebex.Curve25519/Rebex.Curve25519.nuspec" tofile="../tmp/Rebex.Curve25519/Rebex.Curve25519.nuspec" />
+        <copy file="Rebex.Curve25519/Rebex.Elliptic.Curve25519.nuspec" tofile="../tmp/Rebex.Curve25519/Rebex.Elliptic.Curve25519.nuspec" />
 
         <exec program="nuget " verbose="false" workingdir="../tmp/Rebex.Curve25519"> -->
 			<arg value="pack" />
@@ -186,7 +186,7 @@
         
         <copy todir="../out" flatten="true">
 			<fileset basedir="../tmp/Rebex.Curve25519">
-				<include name="Rebex.Curve25519.*.nupkg" />
+				<include name="Rebex.Elliptic.Curve25519.*.nupkg" />
 			</fileset>
 		</copy>
 	</target>
@@ -236,14 +236,14 @@
 		</exec>
 		<copy file="Rebex.Ed25519/bin/net40/Release/Rebex.Ed25519.xml" todir="../tmp/Rebex.Ed25519/lib/net20" />
 
-		<copy file="Rebex.Ed25519/Rebex.Ed25519.nuspec" todir="../tmp/Rebex.Ed25519" />
+		<copy file="Rebex.Ed25519/Rebex.Elliptic.Ed25519.nuspec" todir="../tmp/Rebex.Ed25519" />
 		<exec program="nuget " verbose="false" workingdir="../tmp/Rebex.Ed25519">
 			<arg value="pack" />
 		</exec>
         
 		<copy todir="../out" flatten="true">
 			<fileset basedir="../tmp/Rebex.Ed25519">
-				<include name="Rebex.Ed25519.*.nupkg" />
+				<include name="Rebex.Elliptic.Ed25519.*.nupkg" />
 			</fileset>
 		</copy>
 
