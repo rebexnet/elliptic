@@ -3,7 +3,7 @@
   <metadata>
     <id>Rebex.Elliptic.Ed25519</id>
     <title>Rebex.Elliptic.Ed25519</title>
-    <version>0.9.0</version>
+    <version>0.9.1</version>
     <authors>Rebex CR, s.r.o.</authors>
     <owners>Rebex CR, s.r.o.</owners>
     <licenseUrl>https://github.com/rebexnet/elliptic/blob/174348a578efc2aa36e349d6a6de4a57bce14a5e/Src/Rebex.Ed25519/LICENSE</licenseUrl>
@@ -19,6 +19,6 @@
         <dependency id="System.Security.Cryptography.Csp" version="[4.0.0, )" />
       </group>
     </dependencies>
-    <releaseNotes>Initial release</releaseNotes>
+    <releaseNotes>removed compiler optimization from ed25519 - issues in Mono runtime</releaseNotes>
   </metadata>
 </package>
