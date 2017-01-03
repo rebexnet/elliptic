@@ -135,6 +135,7 @@
       <CompileAsManaged>Pure</CompileAsManaged>
       <OmitDefaultLibName>true</OmitDefaultLibName>
       <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
+      <Optimization>Disabled</Optimization>
     </ClCompile>
     <Link>
       <AdditionalDependencies />
