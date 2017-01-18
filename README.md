@@ -6,11 +6,20 @@ Unfortunately, built-in support for ECC algorithms in Microsoft Windows and .NET
 
 ## Supported algorithms
 
-Due to these limitations mentioned above, Rebex components only support some algorithms out-of-the-box, and only on some platforms. However, additional algorithms can easily be enabled using an external plugin. See [Rebex knowledge base](http://www.rebex.net/kb/elliptic-curve-plugins/) for complete list of supported algorithms and platforms.
+Due to these limitations mentioned above, Rebex components only support some algorithms out-of-the-box, and only on some platforms. However, additional algorithms can easily be enabled using an external plugin. 
+
+See [Rebex Labs](http://labs.rebex.net/curves) for complete list of supported algorithms and platforms.
 
 ## Using external plugins to enable ECC
 
-To enable the above mentioned plugins, reference the dlls and add the following code to register them:
+The packages can be installed using [NuGet](https://www.nuget.org/profiles/rebex) package manager:
+```powershell
+PM> Install-Package Rebex.Elliptic.Ed25519
+PM> Install-Package Rebex.Elliptic.Curve25519
+PM> Install-Package Rebex.Elliptic.Castle
+```
+
+To enable the above mentioned plugins, add the following code to register them:
 
 ```csharp
         // import NISTP and Brainpool curves
