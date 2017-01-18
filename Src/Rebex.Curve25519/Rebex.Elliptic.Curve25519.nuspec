@@ -9,7 +9,7 @@
     <licenseUrl>https://github.com/rebexnet/elliptic/blob/174348a578efc2aa36e349d6a6de4a57bce14a5e/Src/Rebex.Curve25519/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Managed implementation of Curve25519 key exchange algorithm</description>
-    <projectUrl>https://github.com/rebexnet/elliptic</projectUrl>
+    <projectUrl>https://labs.rebex.net/curves</projectUrl>
     <tags>25519 ECC curve25519 elliptic cryptography</tags>
     <dependencies>
       <group targetFramework=".NETFramework2.0" />

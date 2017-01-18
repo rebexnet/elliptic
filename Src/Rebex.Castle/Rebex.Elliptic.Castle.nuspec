@@ -10,7 +10,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Wrapper around BouncyCastle library that provides a simple API for Elliptic Curve algorithms</description>
     <tags>ECC ECDH brainpool nistp256 nistp384 nistp521 elliptic cryptography Diffie-Hellman</tags>
-    <projectUrl>https://github.com/rebexnet/elliptic</projectUrl>
+    <projectUrl>https://labs.rebex.net/curves</projectUrl>
     <dependencies>
       <group targetFramework=".NETFramework2.0" />
       <group targetFramework=".NETFramework4.0">
