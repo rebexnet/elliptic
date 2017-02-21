@@ -8,7 +8,7 @@
   "description": "Wrapper around BouncyCastle library that provides a simple API for Elliptic Curve algorithms",
 
   "dependencies": {
-    "Portable.BouncyCastle": "1.8.1.1"
+    "Portable.BouncyCastle": "1.8.1.2"
   },
 
   "frameworks": {
