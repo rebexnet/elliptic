@@ -2,6 +2,9 @@
 using Org.BouncyCastle.Math;
 using Org.BouncyCastle.Security;
 using System;
+using Org.BouncyCastle.Crypto;
+using Org.BouncyCastle.Crypto.Digests;
+using Org.BouncyCastle.Crypto.Signers;
 
 namespace Rebex.Security.Cryptography
 {
@@ -20,18 +23,37 @@ namespace Rebex.Security.Cryptography
 		}
 
 		/// <summary>
+		/// Signs the supplied <paramref name="hash"/>.
+		/// </summary>
+		public byte[] SignHash(byte[] hash)
+		{
+			if (hash == null)
+				throw new ArgumentNullException("hash");
+
+			var signer = new DsaDigestSigner(new ECDsaSigner(), new NullDigest());
+			return Sign(hash, signer);
+		}
+
+		/// <summary>
 		/// Signs the supplied <paramref name="message"/>.
 		/// </summary>
 		public byte[] SignMessage(byte[] message)
 		{
-			if (message == null)
-				throw new ArgumentNullException("message");
+			if (message == null) throw new ArgumentNullException("message");
+
+			var signer = SignerUtilities.GetSigner(SignatureAlgorithm);
+			return Sign(message, signer);
+		}
+
+		private byte[] Sign(byte[] data, ISigner signer)
+		{
+			if (data == null)
+				throw new ArgumentNullException("data");
 
 			EnsurePrivate();
 
-			var signer = SignerUtilities.GetSigner(SignatureAlgorithm);
 			signer.Init(true, PrivateKey);
-			signer.BlockUpdate(message, 0, message.Length);
+			signer.BlockUpdate(data, 0, data.Length);
 			byte[] signature = signer.GenerateSignature();
 
 			int keySize = (BitLength + 7) / 8;
@@ -41,27 +63,42 @@ namespace Rebex.Security.Cryptography
 		}
 
 		/// <summary>
+		/// Verifies the given signature matches the supplied hash.
+		/// </summary>
+		public bool VerifyHash(byte[] hash, byte[] signature)
+		{
+			if (hash == null) throw new ArgumentNullException("hash");
+
+			var signer = new DsaDigestSigner(new ECDsaSigner(), new NullDigest());
+			return Verify(hash, signature, signer);
+		}
+
+		/// <summary>
 		/// Verifies the given signature matches the supplied message.
 		/// </summary>
 		public bool VerifyMessage(byte[] message, byte[] signature)
 		{
-			if (message == null)
-				throw new ArgumentNullException("message");
+			if (message == null) throw new ArgumentNullException("message");
 
-			if (signature == null)
-				throw new ArgumentNullException("signature");
+			var signer = SignerUtilities.GetSigner(SignatureAlgorithm);
+			return Verify(message, signature, signer);
+		}
+
+		private bool Verify(byte[] data, byte[] signature, ISigner signer)
+		{
+			if (data == null) throw new ArgumentNullException("data");
+			if (signature == null) throw new ArgumentNullException("signature");
 
 			EnsurePublic();
 
-			int keySize = (BitLength + 7) / 8;
-			if (signature.Length != keySize * 2)
+			int keySize = (BitLength + 7)/8;
+			if (signature.Length != keySize*2)
 				return false;
 
 			signature = EncodeSignature(signature, keySize);
 
-			var signer = SignerUtilities.GetSigner(SignatureAlgorithm);
 			signer.Init(false, PublicKey);
-			signer.BlockUpdate(message, 0, message.Length);
+			signer.BlockUpdate(data, 0, data.Length);
 			return signer.VerifySignature(signature);
 		}
 
