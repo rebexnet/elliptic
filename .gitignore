@@ -50,7 +50,7 @@ _ReSharper*/
 *.[Pp]ublish.xml
 [Oo]ut/*
 tmp/*
-.vs/**
+**/.vs/**
 .hg/**
 Shared/nant/
 [Ss]hared/nant/*.dll	

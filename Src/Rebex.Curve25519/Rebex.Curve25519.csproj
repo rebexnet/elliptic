@@ -1,0 +1,6 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net20;net40;netstandard1.6</TargetFrameworks>
+    <RootNamespace>Rebex.Security.Cryptography</RootNamespace>
+  </PropertyGroup>
+</Project>

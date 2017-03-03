@@ -2,10 +2,8 @@
 
 <project name="crypto" default="help" xmlns="http://tempuri.org/nant-donotuse.xsd">
 
-	<readregistry property="msbuild.14.exe" key="SOFTWARE\Microsoft\MSBuild\14.0\MSBuildOverrideTasksPath" hive="LocalMachine" failonerror="false" />
-	<property name="msbuild.14.exe" readonly="true" value="${msbuild.14.exe}/msbuild.exe" if="${property::exists('msbuild.14.exe')}" />
-	<fail message="msbuild 14 not found" if="${not property::exists('msbuild.14.exe') or not file::exists(msbuild.14.exe)}" />
-
+    <!-- replace by vswhere once it gets nuget-packaged -->
+	<property name="msbuild.15.exe" readonly="true" value="c:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\amd64\MSBuild.exe" />
 	<property name="retarget.exe" readonly="true" value="Retarget/bin/Release/retarget.exe" />
 
 	<target name="help">
@@ -33,9 +31,7 @@
     <target name="restore">
         <echo message="Restoring packages and dependencies..." />
         
-        <exec program="dotnet" verbose="true">
-			<arg value="restore" />
-		</exec>
+        <exec program="dotnet" commandline="restore Crypto.sln" />
         
         <if test="${not file::exists('../external/bouncyeccf/.git')}">
             <exec program="git">
@@ -84,74 +80,36 @@
 
     <target name="bin.retarget">
         <echo message="Building .NET Core Retarget..." />
-        
-        <exec program="c:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe" workingdir="Retarget">
-			<arg value="Retarget.csproj" />
-			<arg value="/p:Configuration=Release" />
-			<arg value="/verbosity:quiet" />
-			<arg value="/nologo" />
-		</exec>
+        <exec program="dotnet" workingdir="Retarget" commandline="build -c Release Retarget.csproj" />
 
 		<fail message="retarget.exe not found" if="${not file::exists(retarget.exe)}" />
     </target>
 	
 	<target name="bin.castle">
-        <echo message="Building Rebex.Castle for .NET Core..." />
-        
-		<exec program="dotnet" verbose="true" workingdir="Rebex.Castle">
-			<arg value="build" />
-			<arg value="-c" />
-			<arg value="Release" />
-		</exec>
+        <echo message="Building Rebex.Castle for .NET 4.0 and netstandard..." />
+		<exec program="dotnet" workingdir="Rebex.Castle" commandline="build -c Release Rebex.Castle.csproj" />
 
 		<echo message="Building Rebex.Castle for .NET CF..." />
-
-		<exec program="c:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe" workingdir="Rebex.Castle">
+        <exec program="c:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe" workingdir="Rebex.Castle">
 			<arg value="Rebex.Castle.CF.csproj" />
 			<arg value="/p:Configuration=Release" />
             <arg value="/p:DefineConstants=&quot;NETCF_1_0;TRACE;LITE&quot;" />
             <arg value="/p:TargetFrameworkVersion=v2.0" />
-			<arg value="/verbosity:quiet" />
-			<arg value="/nologo" />
+			<arg value="/verbosity:minimal" />
 		</exec>
         
-        
-        
         <echo message="Building Rebex.Castle for .NET 2.0..." />
-
-		<exec program="c:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe" workingdir="Rebex.Castle">
+        <exec program="c:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe" workingdir="Rebex.Castle">
 			<arg value="Rebex.Castle.CF.csproj" />
 			<arg value="/p:Configuration=Release" />
             <arg value="/p:DefineConstants=&quot;TRACE;LITE&quot;" />
             <arg value="/p:TargetFrameworkVersion=v2.0" />
-			<arg value="/verbosity:quiet" />
-			<arg value="/nologo" />
+			<arg value="/verbosity:minimal" />
 		</exec>
 
         <!-- for some odd reason the 2.0 build fails with documentation enabled -->
         <copy file="Rebex.Castle/bin/Release/netcf20/Rebex.Castle.xml" tofile="Rebex.Castle/bin/Release/net20/Rebex.Castle.xml" />
         
-        <echo message="Building Rebex.Castle for .NET 4.0..." />
-
-        <move file="Rebex.Castle/project.lock.json" tofile="Rebex.Castle/project.lock._json" />
-        <trycatch>
-            <try>
-                <exec program="${msbuild.14.exe}" workingdir="Rebex.Castle">
-                    <arg value="Rebex.Castle.CF.csproj" />
-                    <arg value="/p:Configuration=Release" />
-                    <arg value="/p:DefineConstants=&quot;TRACE;LITE&quot;" />
-                    <arg value="/p:TargetFrameworkVersion=v4.0" />
-                    <arg value="/p:OutputPath=bin\Release\net40\" />
-                    <arg value="/t:Clean,Build" />
-                    <arg value="/verbosity:quiet" />
-                    <arg value="/nologo" />
-                </exec>
-            </try>
-            <finally>
-                <move file="Rebex.Castle/project.lock._json" tofile="Rebex.Castle/project.lock.json" />
-            </finally>
-        </trycatch>
-
         <copy todir="../tmp/Rebex.Castle/lib">
 			<fileset basedir="Rebex.Castle/bin/Release">
 				<include name="**/Rebex.Castle.*" />
@@ -160,10 +118,7 @@
         
         <copy file="Rebex.Castle/Rebex.Elliptic.Castle.nuspec" tofile="../tmp/Rebex.Castle/Rebex.Elliptic.Castle.nuspec" />
         
-        <exec program="nuget " verbose="false" workingdir="../tmp/Rebex.Castle"> -->
-			<arg value="pack" />
-		</exec>
-        
+        <exec program="nuget" workingdir="../tmp/Rebex.Castle" commandline="pack" />
         <copy todir="../out" flatten="true">
 			<fileset basedir="../tmp/Rebex.Castle">
 				<include name="Rebex.Elliptic.Castle.*.nupkg" />
@@ -173,21 +128,12 @@
 
 	<target name="bin.curve25519">
 		<echo message="Building Rebex.Curve25519..." />
-
-		<exec program="dotnet" verbose="true" workingdir="Rebex.Curve25519">
-			<arg value="build" />
-			<arg value="-c" />
-			<arg value="Release" />
-		</exec>
-
+        <exec program="${msbuild.15.exe}" workingdir="Rebex.Curve25519" 
+              commandline="/p:Configuration=Release /verbosity:minimal Rebex.Curve25519.csproj" />
+		
         <echo message="Building Rebex.Curve25519 for .NET CF..." />
-
-		<exec program="c:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe" workingdir="Rebex.Curve25519">
-			<arg value="Rebex.Curve25519.CF.csproj" />
-			<arg value="/p:Configuration=Release" />
-			<arg value="/verbosity:quiet" />
-			<arg value="/nologo" />
-		</exec>
+		<exec program="c:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe" workingdir="Rebex.Curve25519"
+              commandline="/p:Configuration=Release /verbosity:minimal Rebex.Curve25519.CF.csproj" />
         
 		<copy todir="../tmp/Rebex.Curve25519/lib">
 			<fileset basedir="Rebex.Curve25519/bin/Release">
@@ -197,9 +143,7 @@
         
         <copy file="Rebex.Curve25519/Rebex.Elliptic.Curve25519.nuspec" tofile="../tmp/Rebex.Curve25519/Rebex.Elliptic.Curve25519.nuspec" />
 
-        <exec program="nuget " verbose="false" workingdir="../tmp/Rebex.Curve25519"> -->
-			<arg value="pack" />
-		</exec>
+        <exec program="nuget" verbose="false" workingdir="../tmp/Rebex.Curve25519" commandline="pack" />
         
         <copy todir="../out" flatten="true">
 			<fileset basedir="../tmp/Rebex.Curve25519">
@@ -211,14 +155,14 @@
 	<target name="bin.ed25519">
 		<echo message="Building Rebex.Ed25519..." />
 
-		<exec program="${msbuild.14.exe}" verbose="false" workingdir="Rebex.Ed25519">
+		<exec program="${msbuild.15.exe}" verbose="false" workingdir="Rebex.Ed25519">
 			<arg value="/verbosity:quiet" />
 			<arg value="/p:Configuration=Release" />
 			<arg value="/p:SkipPlatformVerification=true" />
 			<arg value="Rebex.Ed25519.vcxproj" />
 		</exec>
 
-		<exec program="${msbuild.14.exe}" verbose="false" workingdir="Rebex.Ed25519">
+		<exec program="${msbuild.15.exe}" verbose="false" workingdir="Rebex.Ed25519">
 			<arg value="/verbosity:quiet" />
 			<arg value="/p:Configuration=Release" />
 			<arg value="/p:SkipPlatformVerification=true" />
