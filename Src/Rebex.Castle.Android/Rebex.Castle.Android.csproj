@@ -1,0 +1,1253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0E338ADB-7089-4E1B-AC20-A84DB828D79D}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Rebex.Castle</RootNamespace>
+    <AssemblyName>Rebex.Castle</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v2.3</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;ANDROID LITE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Rebex.Castle\bin\Release\monoandroid</OutputPath>
+    <DefineConstants>TRACE;ANDROID LITE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\parameters\DHKeyGenerationParameters.cs">
+      <Link>BouncyCastle\crypto\parameters\DHKeyGenerationParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\parameters\DHKeyParameters.cs">
+      <Link>BouncyCastle\crypto\parameters\DHKeyParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\parameters\DHParameters.cs">
+      <Link>BouncyCastle\crypto\parameters\DHParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\parameters\DHPrivateKeyParameters.cs">
+      <Link>BouncyCastle\crypto\parameters\DHPrivateKeyParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\parameters\DHPublicKeyParameters.cs">
+      <Link>BouncyCastle\crypto\parameters\DHPublicKeyParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\parameters\DHValidationParameters.cs">
+      <Link>BouncyCastle\crypto\parameters\DHValidationParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\parameters\DsaKeyGenerationParameters.cs">
+      <Link>BouncyCastle\crypto\parameters\DsaKeyGenerationParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\parameters\DsaKeyParameters.cs">
+      <Link>BouncyCastle\crypto\parameters\DsaKeyParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\parameters\DSAParameterGenerationParameters.cs">
+      <Link>BouncyCastle\crypto\parameters\DSAParameterGenerationParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\parameters\DsaParameters.cs">
+      <Link>BouncyCastle\crypto\parameters\DsaParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\parameters\DsaPrivateKeyParameters.cs">
+      <Link>BouncyCastle\crypto\parameters\DsaPrivateKeyParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\parameters\DsaPublicKeyParameters.cs">
+      <Link>BouncyCastle\crypto\parameters\DsaPublicKeyParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\parameters\DsaValidationParameters.cs">
+      <Link>BouncyCastle\crypto\parameters\DsaValidationParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\Rebex.Castle\ECKeyParametersExt.cs">
+      <Link>ECKeyParametersExt.cs</Link>
+    </Compile>
+    <Compile Include="..\Rebex.Castle\EllipticCurveAlgorithm.cs">
+      <Link>EllipticCurveAlgorithm.cs</Link>
+    </Compile>
+    <Compile Include="..\Rebex.Castle\EllipticCurveDiffieHellman.cs">
+      <Link>EllipticCurveDiffieHellman.cs</Link>
+    </Compile>
+    <Compile Include="..\Rebex.Castle\EllipticCurveDsa.cs">
+      <Link>EllipticCurveDsa.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\agreement\ECDHBasicAgreement.cs">
+      <Link>BouncyCastle\crypto\agreement\ECDHBasicAgreement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\signers\DsaDigestSigner.cs">
+      <Link>BouncyCastle\crypto\signers\DsaDigestSigner.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\security\AgreementUtilities.cs">
+      <Link>BouncyCastle\security\AgreementUtilities.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\security\GeneratorUtilities.cs">
+      <Link>BouncyCastle\security\GeneratorUtilities.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\security\SignerUtilities.cs">
+      <Link>BouncyCastle\security\SignerUtilities.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\anssi\ANSSINamedCurves.cs">
+      <Link>BouncyCastle\asn1\anssi\ANSSINamedCurves.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\anssi\ANSSIObjectIdentifiers.cs">
+      <Link>BouncyCastle\asn1\anssi\ANSSIObjectIdentifiers.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\Asn1Encodable.cs">
+      <Link>BouncyCastle\asn1\Asn1Encodable.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\Asn1EncodableVector.cs">
+      <Link>BouncyCastle\asn1\Asn1EncodableVector.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\Asn1Exception.cs">
+      <Link>BouncyCastle\asn1\Asn1Exception.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\ASN1Generator.cs">
+      <Link>BouncyCastle\asn1\ASN1Generator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\Asn1InputStream.cs">
+      <Link>BouncyCastle\asn1\Asn1InputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\Asn1Null.cs">
+      <Link>BouncyCastle\asn1\Asn1Null.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\Asn1Object.cs">
+      <Link>BouncyCastle\asn1\Asn1Object.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\Asn1OctetString.cs">
+      <Link>BouncyCastle\asn1\Asn1OctetString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\ASN1OctetStringParser.cs">
+      <Link>BouncyCastle\asn1\ASN1OctetStringParser.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\Asn1OutputStream.cs">
+      <Link>BouncyCastle\asn1\Asn1OutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\Asn1ParsingException.cs">
+      <Link>BouncyCastle\asn1\Asn1ParsingException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\Asn1Sequence.cs">
+      <Link>BouncyCastle\asn1\Asn1Sequence.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\ASN1SequenceParser.cs">
+      <Link>BouncyCastle\asn1\ASN1SequenceParser.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\Asn1Set.cs">
+      <Link>BouncyCastle\asn1\Asn1Set.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\ASN1SetParser.cs">
+      <Link>BouncyCastle\asn1\ASN1SetParser.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\ASN1StreamParser.cs">
+      <Link>BouncyCastle\asn1\ASN1StreamParser.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\Asn1TaggedObject.cs">
+      <Link>BouncyCastle\asn1\Asn1TaggedObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\ASN1TaggedObjectParser.cs">
+      <Link>BouncyCastle\asn1\ASN1TaggedObjectParser.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\Asn1Tags.cs">
+      <Link>BouncyCastle\asn1\Asn1Tags.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\BerApplicationSpecific.cs">
+      <Link>BouncyCastle\asn1\BerApplicationSpecific.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\BerApplicationSpecificParser.cs">
+      <Link>BouncyCastle\asn1\BerApplicationSpecificParser.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\BERBitString.cs">
+      <Link>BouncyCastle\asn1\BERBitString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\BERGenerator.cs">
+      <Link>BouncyCastle\asn1\BERGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\BerNull.cs">
+      <Link>BouncyCastle\asn1\BerNull.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\BerOctetString.cs">
+      <Link>BouncyCastle\asn1\BerOctetString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\BEROctetStringGenerator.cs">
+      <Link>BouncyCastle\asn1\BEROctetStringGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\BEROctetStringParser.cs">
+      <Link>BouncyCastle\asn1\BEROctetStringParser.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\BerOutputStream.cs">
+      <Link>BouncyCastle\asn1\BerOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\BerSequence.cs">
+      <Link>BouncyCastle\asn1\BerSequence.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\BERSequenceGenerator.cs">
+      <Link>BouncyCastle\asn1\BERSequenceGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\BERSequenceParser.cs">
+      <Link>BouncyCastle\asn1\BERSequenceParser.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\BerSet.cs">
+      <Link>BouncyCastle\asn1\BerSet.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\BERSetGenerator.cs">
+      <Link>BouncyCastle\asn1\BERSetGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\BERSetParser.cs">
+      <Link>BouncyCastle\asn1\BERSetParser.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\BerTaggedObject.cs">
+      <Link>BouncyCastle\asn1\BerTaggedObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\BERTaggedObjectParser.cs">
+      <Link>BouncyCastle\asn1\BERTaggedObjectParser.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\ConstructedOctetStream.cs">
+      <Link>BouncyCastle\asn1\ConstructedOctetStream.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\cryptopro\CryptoProObjectIdentifiers.cs">
+      <Link>BouncyCastle\asn1\cryptopro\CryptoProObjectIdentifiers.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DefiniteLengthInputStream.cs">
+      <Link>BouncyCastle\asn1\DefiniteLengthInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DerApplicationSpecific.cs">
+      <Link>BouncyCastle\asn1\DerApplicationSpecific.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DerBitString.cs">
+      <Link>BouncyCastle\asn1\DerBitString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DerBMPString.cs">
+      <Link>BouncyCastle\asn1\DerBMPString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DerBoolean.cs">
+      <Link>BouncyCastle\asn1\DerBoolean.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DerEnumerated.cs">
+      <Link>BouncyCastle\asn1\DerEnumerated.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DERExternal.cs">
+      <Link>BouncyCastle\asn1\DERExternal.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DERExternalParser.cs">
+      <Link>BouncyCastle\asn1\DERExternalParser.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DerGeneralizedTime.cs">
+      <Link>BouncyCastle\asn1\DerGeneralizedTime.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DerGeneralString.cs">
+      <Link>BouncyCastle\asn1\DerGeneralString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DERGenerator.cs">
+      <Link>BouncyCastle\asn1\DERGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DerGraphicString.cs">
+      <Link>BouncyCastle\asn1\DerGraphicString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DerIA5String.cs">
+      <Link>BouncyCastle\asn1\DerIA5String.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DerInteger.cs">
+      <Link>BouncyCastle\asn1\DerInteger.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DerNull.cs">
+      <Link>BouncyCastle\asn1\DerNull.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DerNumericString.cs">
+      <Link>BouncyCastle\asn1\DerNumericString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DerObjectIdentifier.cs">
+      <Link>BouncyCastle\asn1\DerObjectIdentifier.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DerOctetString.cs">
+      <Link>BouncyCastle\asn1\DerOctetString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DEROctetStringParser.cs">
+      <Link>BouncyCastle\asn1\DEROctetStringParser.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DerOutputStream.cs">
+      <Link>BouncyCastle\asn1\DerOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DerPrintableString.cs">
+      <Link>BouncyCastle\asn1\DerPrintableString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DerSequence.cs">
+      <Link>BouncyCastle\asn1\DerSequence.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DERSequenceGenerator.cs">
+      <Link>BouncyCastle\asn1\DERSequenceGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DERSequenceParser.cs">
+      <Link>BouncyCastle\asn1\DERSequenceParser.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DerSet.cs">
+      <Link>BouncyCastle\asn1\DerSet.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DERSetGenerator.cs">
+      <Link>BouncyCastle\asn1\DERSetGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DERSetParser.cs">
+      <Link>BouncyCastle\asn1\DERSetParser.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DerStringBase.cs">
+      <Link>BouncyCastle\asn1\DerStringBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DerT61String.cs">
+      <Link>BouncyCastle\asn1\DerT61String.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DerTaggedObject.cs">
+      <Link>BouncyCastle\asn1\DerTaggedObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DerUniversalString.cs">
+      <Link>BouncyCastle\asn1\DerUniversalString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DerUTCTime.cs">
+      <Link>BouncyCastle\asn1\DerUTCTime.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DerUTF8String.cs">
+      <Link>BouncyCastle\asn1\DerUTF8String.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DerVideotexString.cs">
+      <Link>BouncyCastle\asn1\DerVideotexString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\DerVisibleString.cs">
+      <Link>BouncyCastle\asn1\DerVisibleString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\IAsn1ApplicationSpecificParser.cs">
+      <Link>BouncyCastle\asn1\IAsn1ApplicationSpecificParser.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\IAsn1Choice.cs">
+      <Link>BouncyCastle\asn1\IAsn1Choice.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\IAsn1Convertible.cs">
+      <Link>BouncyCastle\asn1\IAsn1Convertible.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\IAsn1String.cs">
+      <Link>BouncyCastle\asn1\IAsn1String.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\IndefiniteLengthInputStream.cs">
+      <Link>BouncyCastle\asn1\IndefiniteLengthInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\LazyASN1InputStream.cs">
+      <Link>BouncyCastle\asn1\LazyASN1InputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\LazyDERSequence.cs">
+      <Link>BouncyCastle\asn1\LazyDERSequence.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\LazyDERSet.cs">
+      <Link>BouncyCastle\asn1\LazyDERSet.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\LimitedInputStream.cs">
+      <Link>BouncyCastle\asn1\LimitedInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\nist\NISTNamedCurves.cs">
+      <Link>BouncyCastle\asn1\nist\NISTNamedCurves.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\nist\NISTObjectIdentifiers.cs">
+      <Link>BouncyCastle\asn1\nist\NISTObjectIdentifiers.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\OidTokenizer.cs">
+      <Link>BouncyCastle\asn1\OidTokenizer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\oiw\OIWObjectIdentifiers.cs">
+      <Link>BouncyCastle\asn1\oiw\OIWObjectIdentifiers.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\pkcs\PKCSObjectIdentifiers.cs">
+      <Link>BouncyCastle\asn1\pkcs\PKCSObjectIdentifiers.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\pkcs\PrivateKeyInfo.cs">
+      <Link>BouncyCastle\asn1\pkcs\PrivateKeyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\sec\ECPrivateKeyStructure.cs">
+      <Link>BouncyCastle\asn1\sec\ECPrivateKeyStructure.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\sec\SECNamedCurves.cs">
+      <Link>BouncyCastle\asn1\sec\SECNamedCurves.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\sec\SECObjectIdentifiers.cs">
+      <Link>BouncyCastle\asn1\sec\SECObjectIdentifiers.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\teletrust\TeleTrusTNamedCurves.cs">
+      <Link>BouncyCastle\asn1\teletrust\TeleTrusTNamedCurves.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\teletrust\TeleTrusTObjectIdentifiers.cs">
+      <Link>BouncyCastle\asn1\teletrust\TeleTrusTObjectIdentifiers.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\util\FilterStream.cs">
+      <Link>BouncyCastle\asn1\util\FilterStream.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\x509\AlgorithmIdentifier.cs">
+      <Link>BouncyCastle\asn1\x509\AlgorithmIdentifier.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\x509\SubjectPublicKeyInfo.cs">
+      <Link>BouncyCastle\asn1\x509\SubjectPublicKeyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\x9\DHDomainParameters.cs">
+      <Link>BouncyCastle\asn1\x9\DHDomainParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\x9\DHPublicKey.cs">
+      <Link>BouncyCastle\asn1\x9\DHPublicKey.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\x9\DHValidationParms.cs">
+      <Link>BouncyCastle\asn1\x9\DHValidationParms.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\x9\ECNamedCurveTable.cs">
+      <Link>BouncyCastle\asn1\x9\ECNamedCurveTable.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\x9\KeySpecificInfo.cs">
+      <Link>BouncyCastle\asn1\x9\KeySpecificInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\x9\OtherInfo.cs">
+      <Link>BouncyCastle\asn1\x9\OtherInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\x9\X962NamedCurves.cs">
+      <Link>BouncyCastle\asn1\x9\X962NamedCurves.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\x9\X962Parameters.cs">
+      <Link>BouncyCastle\asn1\x9\X962Parameters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\x9\X9Curve.cs">
+      <Link>BouncyCastle\asn1\x9\X9Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\x9\X9ECParameters.cs">
+      <Link>BouncyCastle\asn1\x9\X9ECParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\x9\X9ECParametersHolder.cs">
+      <Link>BouncyCastle\asn1\x9\X9ECParametersHolder.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\x9\X9ECPoint.cs">
+      <Link>BouncyCastle\asn1\x9\X9ECPoint.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\x9\X9FieldElement.cs">
+      <Link>BouncyCastle\asn1\x9\X9FieldElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\x9\X9FieldID.cs">
+      <Link>BouncyCastle\asn1\x9\X9FieldID.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\x9\X9IntegerConverter.cs">
+      <Link>BouncyCastle\asn1\x9\X9IntegerConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\asn1\x9\X9ObjectIdentifiers.cs">
+      <Link>BouncyCastle\asn1\x9\X9ObjectIdentifiers.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\AsymmetricCipherKeyPair.cs">
+      <Link>BouncyCastle\crypto\AsymmetricCipherKeyPair.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\AsymmetricKeyParameter.cs">
+      <Link>BouncyCastle\crypto\AsymmetricKeyParameter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\Check.cs">
+      <Link>BouncyCastle\crypto\Check.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\CryptoException.cs">
+      <Link>BouncyCastle\crypto\CryptoException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\DataLengthException.cs">
+      <Link>BouncyCastle\crypto\DataLengthException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\digests\GeneralDigest.cs">
+      <Link>BouncyCastle\crypto\digests\GeneralDigest.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\digests\LongDigest.cs">
+      <Link>BouncyCastle\crypto\digests\LongDigest.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\digests\NullDigest.cs">
+      <Link>BouncyCastle\crypto\digests\NullDigest.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\digests\Sha256Digest.cs">
+      <Link>BouncyCastle\crypto\digests\Sha256Digest.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\digests\Sha384Digest.cs">
+      <Link>BouncyCastle\crypto\digests\Sha384Digest.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\digests\Sha512Digest.cs">
+      <Link>BouncyCastle\crypto\digests\Sha512Digest.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\ec\CustomNamedCurves.cs">
+      <Link>BouncyCastle\crypto\ec\CustomNamedCurves.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\generators\BaseKdfBytesGenerator.cs">
+      <Link>BouncyCastle\crypto\generators\BaseKdfBytesGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\generators\ECKeyPairGenerator.cs">
+      <Link>BouncyCastle\crypto\generators\ECKeyPairGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\generators\Kdf2BytesGenerator.cs">
+      <Link>BouncyCastle\crypto\generators\Kdf2BytesGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\IAsymmetricBlockCipher.cs">
+      <Link>BouncyCastle\crypto\IAsymmetricBlockCipher.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\IAsymmetricCipherKeyPairGenerator.cs">
+      <Link>BouncyCastle\crypto\IAsymmetricCipherKeyPairGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\IBasicAgreement.cs">
+      <Link>BouncyCastle\crypto\IBasicAgreement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\ICipherParameters.cs">
+      <Link>BouncyCastle\crypto\ICipherParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\IDerivationFunction.cs">
+      <Link>BouncyCastle\crypto\IDerivationFunction.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\IDerivationParameters.cs">
+      <Link>BouncyCastle\crypto\IDerivationParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\IDigest.cs">
+      <Link>BouncyCastle\crypto\IDigest.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\IDSA.cs">
+      <Link>BouncyCastle\crypto\IDSA.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\IEntropySource.cs">
+      <Link>BouncyCastle\crypto\IEntropySource.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\IEntropySourceProvider.cs">
+      <Link>BouncyCastle\crypto\IEntropySourceProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\IMac.cs">
+      <Link>BouncyCastle\crypto\IMac.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\InvalidCipherTextException.cs">
+      <Link>BouncyCastle\crypto\InvalidCipherTextException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\ISignatureFactory.cs">
+      <Link>BouncyCastle\crypto\ISignatureFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\ISigner.cs">
+      <Link>BouncyCastle\crypto\ISigner.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\ISignerWithRecovery.cs">
+      <Link>BouncyCastle\crypto\ISignerWithRecovery.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\IStreamCalculator.cs">
+      <Link>BouncyCastle\crypto\IStreamCalculator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\IVerifier.cs">
+      <Link>BouncyCastle\crypto\IVerifier.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\IVerifierFactory.cs">
+      <Link>BouncyCastle\crypto\IVerifierFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\IVerifierFactoryProvider.cs">
+      <Link>BouncyCastle\crypto\IVerifierFactoryProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\IWrapper.cs">
+      <Link>BouncyCastle\crypto\IWrapper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\IXof.cs">
+      <Link>BouncyCastle\crypto\IXof.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\KeyGenerationParameters.cs">
+      <Link>BouncyCastle\crypto\KeyGenerationParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\MaxBytesExceededException.cs">
+      <Link>BouncyCastle\crypto\MaxBytesExceededException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\OutputLengthException.cs">
+      <Link>BouncyCastle\crypto\OutputLengthException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\parameters\ECDomainParameters.cs">
+      <Link>BouncyCastle\crypto\parameters\ECDomainParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\parameters\ECKeyGenerationParameters.cs">
+      <Link>BouncyCastle\crypto\parameters\ECKeyGenerationParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\parameters\ECKeyParameters.cs">
+      <Link>BouncyCastle\crypto\parameters\ECKeyParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\parameters\ECPrivateKeyParameters.cs">
+      <Link>BouncyCastle\crypto\parameters\ECPrivateKeyParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\parameters\ECPublicKeyParameters.cs">
+      <Link>BouncyCastle\crypto\parameters\ECPublicKeyParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\parameters\ISO18033KDFParameters.cs">
+      <Link>BouncyCastle\crypto\parameters\ISO18033KDFParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\parameters\KdfParameters.cs">
+      <Link>BouncyCastle\crypto\parameters\KdfParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\parameters\ParametersWithRandom.cs">
+      <Link>BouncyCastle\crypto\parameters\ParametersWithRandom.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\prng\DigestRandomGenerator.cs">
+      <Link>BouncyCastle\crypto\prng\DigestRandomGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\prng\IRandomGenerator.cs">
+      <Link>BouncyCastle\crypto\prng\IRandomGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\prng\ThreadedSeedGenerator.cs">
+      <Link>BouncyCastle\crypto\prng\ThreadedSeedGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\signers\ECDsaSigner.cs">
+      <Link>BouncyCastle\crypto\signers\ECDsaSigner.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\signers\IDsaKCalculator.cs">
+      <Link>BouncyCastle\crypto\signers\IDsaKCalculator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\signers\RandomDsaKCalculator.cs">
+      <Link>BouncyCastle\crypto\signers\RandomDsaKCalculator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\util\Pack.cs">
+      <Link>BouncyCastle\crypto\util\Pack.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\BigInteger.cs">
+      <Link>BouncyCastle\math\BigInteger.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\abc\SimpleBigDecimal.cs">
+      <Link>BouncyCastle\math\ec\abc\SimpleBigDecimal.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\abc\Tnaf.cs">
+      <Link>BouncyCastle\math\ec\abc\Tnaf.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\abc\ZTauElement.cs">
+      <Link>BouncyCastle\math\ec\abc\ZTauElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP128R1Curve.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP128R1Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP128R1Field.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP128R1Field.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP128R1FieldElement.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP128R1FieldElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP128R1Point.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP128R1Point.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP160K1Curve.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP160K1Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP160K1Point.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP160K1Point.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP160R1Curve.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP160R1Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP160R1Field.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP160R1Field.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP160R1FieldElement.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP160R1FieldElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP160R1Point.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP160R1Point.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP160R2Curve.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP160R2Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP160R2Field.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP160R2Field.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP160R2FieldElement.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP160R2FieldElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP160R2Point.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP160R2Point.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP192K1Curve.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP192K1Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP192K1Field.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP192K1Field.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP192K1FieldElement.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP192K1FieldElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP192K1Point.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP192K1Point.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP192R1Curve.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP192R1Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP192R1Field.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP192R1Field.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP192R1FieldElement.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP192R1FieldElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP192R1Point.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP192R1Point.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP224K1Curve.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP224K1Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP224K1Field.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP224K1Field.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP224K1FieldElement.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP224K1FieldElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP224K1Point.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP224K1Point.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP224R1Curve.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP224R1Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP224R1Field.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP224R1Field.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP224R1FieldElement.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP224R1FieldElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP224R1Point.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP224R1Point.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP256K1Curve.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP256K1Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP256K1Field.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP256K1Field.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP256K1FieldElement.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP256K1FieldElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP256K1Point.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP256K1Point.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP256R1Curve.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP256R1Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP256R1Field.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP256R1Field.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP256R1FieldElement.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP256R1FieldElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP256R1Point.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP256R1Point.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP384R1Curve.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP384R1Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP384R1Field.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP384R1Field.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP384R1FieldElement.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP384R1FieldElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP384R1Point.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP384R1Point.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP521R1Curve.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP521R1Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP521R1Field.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP521R1Field.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP521R1FieldElement.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP521R1FieldElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecP521R1Point.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecP521R1Point.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT113Field.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT113Field.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT113FieldElement.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT113FieldElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT113R1Curve.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT113R1Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT113R1Point.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT113R1Point.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT113R2Curve.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT113R2Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT113R2Point.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT113R2Point.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT131Field.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT131Field.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT131FieldElement.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT131FieldElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT131R1Curve.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT131R1Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT131R1Point.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT131R1Point.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT131R2Curve.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT131R2Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT131R2Point.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT131R2Point.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT163Field.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT163Field.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT163FieldElement.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT163FieldElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT163K1Curve.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT163K1Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT163K1Point.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT163K1Point.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT163R1Curve.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT163R1Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT163R1Point.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT163R1Point.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT163R2Curve.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT163R2Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT163R2Point.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT163R2Point.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT193Field.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT193Field.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT193FieldElement.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT193FieldElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT193R1Curve.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT193R1Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT193R1Point.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT193R1Point.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT193R2Curve.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT193R2Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT193R2Point.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT193R2Point.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT233Field.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT233Field.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT233FieldElement.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT233FieldElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT233K1Curve.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT233K1Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT233K1Point.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT233K1Point.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT233R1Curve.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT233R1Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT233R1Point.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT233R1Point.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT239Field.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT239Field.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT239FieldElement.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT239FieldElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT239K1Curve.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT239K1Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT239K1Point.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT239K1Point.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT283Field.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT283Field.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT283FieldElement.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT283FieldElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT283K1Curve.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT283K1Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT283K1Point.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT283K1Point.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT283R1Curve.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT283R1Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT283R1Point.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT283R1Point.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT409Field.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT409Field.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT409FieldElement.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT409FieldElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT409K1Curve.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT409K1Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT409K1Point.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT409K1Point.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT409R1Curve.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT409R1Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT409R1Point.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT409R1Point.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT571Field.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT571Field.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT571FieldElement.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT571FieldElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT571K1Curve.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT571K1Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT571K1Point.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT571K1Point.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT571R1Curve.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT571R1Curve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\custom\sec\SecT571R1Point.cs">
+      <Link>BouncyCastle\math\ec\custom\sec\SecT571R1Point.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\ECAlgorithms.cs">
+      <Link>BouncyCastle\math\ec\ECAlgorithms.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\ECCurve.cs">
+      <Link>BouncyCastle\math\ec\ECCurve.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\ECFieldElement.cs">
+      <Link>BouncyCastle\math\ec\ECFieldElement.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\ECPoint.cs">
+      <Link>BouncyCastle\math\ec\ECPoint.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\ECPointMap.cs">
+      <Link>BouncyCastle\math\ec\ECPointMap.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\endo\ECEndomorphism.cs">
+      <Link>BouncyCastle\math\ec\endo\ECEndomorphism.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\endo\GlvEndomorphism.cs">
+      <Link>BouncyCastle\math\ec\endo\GlvEndomorphism.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\endo\GlvTypeBEndomorphism.cs">
+      <Link>BouncyCastle\math\ec\endo\GlvTypeBEndomorphism.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\endo\GlvTypeBParameters.cs">
+      <Link>BouncyCastle\math\ec\endo\GlvTypeBParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\LongArray.cs">
+      <Link>BouncyCastle\math\ec\LongArray.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\multiplier\AbstractECMultiplier.cs">
+      <Link>BouncyCastle\math\ec\multiplier\AbstractECMultiplier.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\multiplier\DoubleAddMultiplier.cs">
+      <Link>BouncyCastle\math\ec\multiplier\DoubleAddMultiplier.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\multiplier\ECMultiplier.cs">
+      <Link>BouncyCastle\math\ec\multiplier\ECMultiplier.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\multiplier\FixedPointCombMultiplier.cs">
+      <Link>BouncyCastle\math\ec\multiplier\FixedPointCombMultiplier.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\multiplier\FixedPointPreCompInfo.cs">
+      <Link>BouncyCastle\math\ec\multiplier\FixedPointPreCompInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\multiplier\FixedPointUtilities.cs">
+      <Link>BouncyCastle\math\ec\multiplier\FixedPointUtilities.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\multiplier\GlvMultiplier.cs">
+      <Link>BouncyCastle\math\ec\multiplier\GlvMultiplier.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\multiplier\MixedNafR2LMultiplier.cs">
+      <Link>BouncyCastle\math\ec\multiplier\MixedNafR2LMultiplier.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\multiplier\MontgomeryLadderMultiplier.cs">
+      <Link>BouncyCastle\math\ec\multiplier\MontgomeryLadderMultiplier.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\multiplier\NafL2RMultiplier.cs">
+      <Link>BouncyCastle\math\ec\multiplier\NafL2RMultiplier.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\multiplier\NafR2LMultiplier.cs">
+      <Link>BouncyCastle\math\ec\multiplier\NafR2LMultiplier.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\multiplier\PreCompInfo.cs">
+      <Link>BouncyCastle\math\ec\multiplier\PreCompInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\multiplier\ReferenceMultiplier.cs">
+      <Link>BouncyCastle\math\ec\multiplier\ReferenceMultiplier.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\multiplier\WNafL2RMultiplier.cs">
+      <Link>BouncyCastle\math\ec\multiplier\WNafL2RMultiplier.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\multiplier\WNafPreCompInfo.cs">
+      <Link>BouncyCastle\math\ec\multiplier\WNafPreCompInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\multiplier\WNafUtilities.cs">
+      <Link>BouncyCastle\math\ec\multiplier\WNafUtilities.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\multiplier\WTauNafMultiplier.cs">
+      <Link>BouncyCastle\math\ec\multiplier\WTauNafMultiplier.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\multiplier\WTauNafPreCompInfo.cs">
+      <Link>BouncyCastle\math\ec\multiplier\WTauNafPreCompInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\multiplier\ZSignedDigitL2RMultiplier.cs">
+      <Link>BouncyCastle\math\ec\multiplier\ZSignedDigitL2RMultiplier.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\multiplier\ZSignedDigitR2LMultiplier.cs">
+      <Link>BouncyCastle\math\ec\multiplier\ZSignedDigitR2LMultiplier.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\ScaleXPointMap.cs">
+      <Link>BouncyCastle\math\ec\ScaleXPointMap.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\ec\ScaleYPointMap.cs">
+      <Link>BouncyCastle\math\ec\ScaleYPointMap.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\field\FiniteFields.cs">
+      <Link>BouncyCastle\math\field\FiniteFields.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\field\GenericPolynomialExtensionField.cs">
+      <Link>BouncyCastle\math\field\GenericPolynomialExtensionField.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\field\GF2Polynomial.cs">
+      <Link>BouncyCastle\math\field\GF2Polynomial.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\field\IExtensionField.cs">
+      <Link>BouncyCastle\math\field\IExtensionField.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\field\IFiniteField.cs">
+      <Link>BouncyCastle\math\field\IFiniteField.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\field\IPolynomial.cs">
+      <Link>BouncyCastle\math\field\IPolynomial.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\field\IPolynomialExtensionField.cs">
+      <Link>BouncyCastle\math\field\IPolynomialExtensionField.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\field\PrimeField.cs">
+      <Link>BouncyCastle\math\field\PrimeField.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\Primes.cs">
+      <Link>BouncyCastle\math\Primes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\raw\Interleave.cs">
+      <Link>BouncyCastle\math\raw\Interleave.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\raw\Mod.cs">
+      <Link>BouncyCastle\math\raw\Mod.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\raw\Nat.cs">
+      <Link>BouncyCastle\math\raw\Nat.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\raw\Nat128.cs">
+      <Link>BouncyCastle\math\raw\Nat128.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\raw\Nat160.cs">
+      <Link>BouncyCastle\math\raw\Nat160.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\raw\Nat192.cs">
+      <Link>BouncyCastle\math\raw\Nat192.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\raw\Nat224.cs">
+      <Link>BouncyCastle\math\raw\Nat224.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\raw\Nat256.cs">
+      <Link>BouncyCastle\math\raw\Nat256.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\raw\Nat320.cs">
+      <Link>BouncyCastle\math\raw\Nat320.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\raw\Nat384.cs">
+      <Link>BouncyCastle\math\raw\Nat384.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\raw\Nat448.cs">
+      <Link>BouncyCastle\math\raw\Nat448.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\raw\Nat512.cs">
+      <Link>BouncyCastle\math\raw\Nat512.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\math\raw\Nat576.cs">
+      <Link>BouncyCastle\math\raw\Nat576.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\security\DigestUtilities.cs">
+      <Link>BouncyCastle\security\DigestUtilities.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\security\DotNetUtilities.cs">
+      <Link>BouncyCastle\security\DotNetUtilities.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\security\GeneralSecurityException.cs">
+      <Link>BouncyCastle\security\GeneralSecurityException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\security\InvalidKeyException.cs">
+      <Link>BouncyCastle\security\InvalidKeyException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\security\InvalidParameterException.cs">
+      <Link>BouncyCastle\security\InvalidParameterException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\security\KeyException.cs">
+      <Link>BouncyCastle\security\KeyException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\security\NoSuchAlgorithmException.cs">
+      <Link>BouncyCastle\security\NoSuchAlgorithmException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\security\PrivateKeyFactory.cs">
+      <Link>BouncyCastle\security\PrivateKeyFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\security\PublicKeyFactory.cs">
+      <Link>BouncyCastle\security\PublicKeyFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\security\SecureRandom.cs">
+      <Link>BouncyCastle\security\SecureRandom.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\security\SecurityUtilityException.cs">
+      <Link>BouncyCastle\security\SecurityUtilityException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\security\SignatureException.cs">
+      <Link>BouncyCastle\security\SignatureException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\Arrays.cs">
+      <Link>BouncyCastle\util\Arrays.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\BigIntegers.cs">
+      <Link>BouncyCastle\util\BigIntegers.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\collections\CollectionUtilities.cs">
+      <Link>BouncyCastle\util\collections\CollectionUtilities.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\collections\EmptyEnumerable.cs">
+      <Link>BouncyCastle\util\collections\EmptyEnumerable.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\collections\EnumerableProxy.cs">
+      <Link>BouncyCastle\util\collections\EnumerableProxy.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\collections\HashSet.cs">
+      <Link>BouncyCastle\util\collections\HashSet.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\collections\ISet.cs">
+      <Link>BouncyCastle\util\collections\ISet.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\collections\LinkedDictionary.cs">
+      <Link>BouncyCastle\util\collections\LinkedDictionary.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\collections\UnmodifiableDictionary.cs">
+      <Link>BouncyCastle\util\collections\UnmodifiableDictionary.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\collections\UnmodifiableDictionaryProxy.cs">
+      <Link>BouncyCastle\util\collections\UnmodifiableDictionaryProxy.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\collections\UnmodifiableList.cs">
+      <Link>BouncyCastle\util\collections\UnmodifiableList.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\collections\UnmodifiableListProxy.cs">
+      <Link>BouncyCastle\util\collections\UnmodifiableListProxy.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\collections\UnmodifiableSet.cs">
+      <Link>BouncyCastle\util\collections\UnmodifiableSet.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\collections\UnmodifiableSetProxy.cs">
+      <Link>BouncyCastle\util\collections\UnmodifiableSetProxy.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\date\DateTimeObject.cs">
+      <Link>BouncyCastle\util\date\DateTimeObject.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\date\DateTimeUtilities.cs">
+      <Link>BouncyCastle\util\date\DateTimeUtilities.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\encoders\Base64.cs">
+      <Link>BouncyCastle\util\encoders\Base64.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\encoders\Hex.cs">
+      <Link>BouncyCastle\util\encoders\Hex.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\encoders\HexEncoder.cs">
+      <Link>BouncyCastle\util\encoders\HexEncoder.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\encoders\IEncoder.cs">
+      <Link>BouncyCastle\util\encoders\IEncoder.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\Enums.cs">
+      <Link>BouncyCastle\util\Enums.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\IMemoable.cs">
+      <Link>BouncyCastle\util\IMemoable.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\Integers.cs">
+      <Link>BouncyCastle\util\Integers.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\io\BaseInputStream.cs">
+      <Link>BouncyCastle\util\io\BaseInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\io\BaseOutputStream.cs">
+      <Link>BouncyCastle\util\io\BaseOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\io\FilterStream.cs">
+      <Link>BouncyCastle\util\io\FilterStream.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\io\NullOutputStream.cs">
+      <Link>BouncyCastle\util\io\NullOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\io\PushbackStream.cs">
+      <Link>BouncyCastle\util\io\PushbackStream.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\io\StreamOverflowException.cs">
+      <Link>BouncyCastle\util\io\StreamOverflowException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\io\Streams.cs">
+      <Link>BouncyCastle\util\io\Streams.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\io\TeeInputStream.cs">
+      <Link>BouncyCastle\util\io\TeeInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\io\TeeOutputStream.cs">
+      <Link>BouncyCastle\util\io\TeeOutputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\MemoableResetException.cs">
+      <Link>BouncyCastle\util\MemoableResetException.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\Platform.cs">
+      <Link>BouncyCastle\util\Platform.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\Strings.cs">
+      <Link>BouncyCastle\util\Strings.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\Times.cs">
+      <Link>BouncyCastle\util\Times.cs</Link>
+    </Compile>
+    <Compile Include="..\..\external\bouncyeccf\crypto\src\util\TypeExtensions.cs">
+      <Link>BouncyCastle\util\TypeExtensions.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BouncyCastle\x509\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
