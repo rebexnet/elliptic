@@ -132,7 +132,11 @@
         <exec program="${msbuild.15.exe}" workingdir="Rebex.Curve25519" 
               commandline="Rebex.Curve25519.csproj ${msbuild.common.params}" />
         
-        <echo message="Building Rebex.Curve25519 for Xamarin iOS..." />
+        <echo message="Building Rebex.Curve25519 for Xamarin Android..." />
+        <exec program="${msbuild.15.exe}" workingdir="Rebex.Curve25519.Android" 
+              commandline="Rebex.Curve25519.Android.csproj ${msbuild.common.params}" />
+
+              <echo message="Building Rebex.Curve25519 for Xamarin iOS..." />
         <exec program="${msbuild.15.exe}" workingdir="Rebex.Curve25519.iOS" 
               commandline="Rebex.Curve25519.iOS.csproj ${msbuild.common.params}" />
         

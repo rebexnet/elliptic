@@ -1,8 +1,8 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("Rebex.Castle")]
-[assembly: AssemblyProduct("Rebex.Castle")]
+[assembly: AssemblyTitle("Rebex.Curve25519.Android")]
+[assembly: AssemblyProduct("Rebex.Curve25519.Android")]
 [assembly: AssemblyCopyright("Copyright © Rebex.NET 2017")]
 [assembly: ComVisible(false)]
 
