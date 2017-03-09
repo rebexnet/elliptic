@@ -56,7 +56,9 @@
     <Compile Include="..\Rebex.Castle\EllipticCurveDsa.cs">
       <Link>EllipticCurveDsa.cs</Link>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\Rebex.Castle\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\parameters\DHKeyGenerationParameters.cs">
