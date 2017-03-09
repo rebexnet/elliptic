@@ -39,6 +39,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rebex.Curve25519", "Rebex.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebex.Castle.Android", "Rebex.Castle.Android\Rebex.Castle.Android.csproj", "{0E338ADB-7089-4E1B-AC20-A84DB828D79D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebex.Castle.iOS", "Rebex.Castle.iOS\Rebex.Castle.iOS.csproj", "{3FFD0CF2-A4B5-45EA-B381-46FA5B09A77B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{0E338ADB-7089-4E1B-AC20-A84DB828D79D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E338ADB-7089-4E1B-AC20-A84DB828D79D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E338ADB-7089-4E1B-AC20-A84DB828D79D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FFD0CF2-A4B5-45EA-B381-46FA5B09A77B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FFD0CF2-A4B5-45EA-B381-46FA5B09A77B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FFD0CF2-A4B5-45EA-B381-46FA5B09A77B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FFD0CF2-A4B5-45EA-B381-46FA5B09A77B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

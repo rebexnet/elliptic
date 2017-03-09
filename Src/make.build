@@ -95,6 +95,10 @@
         <exec program="${msbuild.15.exe}" workingdir="Rebex.Castle.Android" 
               commandline="Rebex.Castle.Android.csproj ${msbuild.common.params}" />
         
+        <echo message="Building Rebex.Castle for iOS Xamarin..." />
+        <exec program="${msbuild.15.exe}" workingdir="Rebex.Castle.iOS" 
+              commandline="Rebex.Castle.iOS.csproj ${msbuild.common.params}" />
+        
         <echo message="Building Rebex.Castle for .NET CF..." />
         <exec program="${msbuild.4.6.exe}" workingdir="Rebex.Castle" 
               commandline="Rebex.Castle.CF.csproj /p:DefineConstants=&quot;NETCF_1_0;TRACE;LITE&quot; /p:TargetFrameworkVersion=v2.0 ${msbuild.common.params}" />
