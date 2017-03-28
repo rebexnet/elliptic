@@ -1,0 +1,17 @@
+/target:library
+/debug-
+/doc:../Rebex.Curve25519/bin/Release/xamarinmac/Rebex.Curve25519.xml
+/out:../Rebex.Curve25519/bin/release/xamarinmac/Rebex.Curve25519.dll
+/optimize+
+/nologo
+/nostdlib+
+/keyfile:c:\data\RebexKey.snk
+"/reference:C:\Program Files (x86)\Rebex Build Tools\Assemblies\XamarinMacMobile\mscorlib.dll"
+"/reference:C:\Program Files (x86)\Rebex Build Tools\Assemblies\XamarinMacMobile\System.dll"
+"/reference:C:\Program Files (x86)\Rebex Build Tools\Assemblies\XamarinMacMobile\System.Core.dll"
+"/reference:C:\Program Files (x86)\Rebex Build Tools\Assemblies\XamarinMacMobile\Xamarin.Mac.dll"
+"/reference:C:\Program Files (x86)\Rebex Build Tools\Assemblies\XamarinMacMobile\Mono.Security.dll"
+
+../Rebex.Curve25519/Curve25519.cs
+../Rebex.Curve25519/Curve25519Inner.cs
+../Rebex.Curve25519/Properties/AssemblyInfo.cs

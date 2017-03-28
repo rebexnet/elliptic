@@ -3,7 +3,9 @@
 <project name="crypto" default="help" xmlns="http://tempuri.org/nant-donotuse.xsd">
 
     <!-- replace by vswhere once it gets nuget-packaged -->
-    <property name="msbuild.15.exe" readonly="true" value="c:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\amd64\MSBuild.exe" />
+    <property name="vspath.15" readonly="true" value="c:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\amd64" />
+    <property name="msbuild.15.exe" readonly="true" value="${vspath.15}\MSBuild.exe" />
+    <property name="csc.15.exe" readonly="true" value="${vspath.15}\Roslyn\csc.exe" />
     <property name="msbuild.4.6.exe" readonly="true" value="c:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe" />
     <property name="msbuild.common.params" readonly="true" value="/p:Configuration=Release /verbosity:minimal /nologo" />
     <property name="retarget.exe" readonly="true" value="Retarget/bin/Release/retarget.exe" />
@@ -91,24 +93,19 @@
         <echo message="Building Rebex.Castle for .NET 4.0 and netstandard..." />
         <exec program="dotnet" workingdir="Rebex.Castle" commandline="build Rebex.Castle.csproj -c Release" />
         
-        <echo message="Building Rebex.Castle for Android Xamarin..." />
-        <exec program="${msbuild.15.exe}" workingdir="Rebex.Castle.Android" 
-              commandline="Rebex.Castle.Android.csproj ${msbuild.common.params}" />
-        
-        <echo message="Building Rebex.Castle for iOS Xamarin..." />
-        <exec program="${msbuild.15.exe}" workingdir="Rebex.Castle.iOS" 
-              commandline="Rebex.Castle.iOS.csproj ${msbuild.common.params}" />
-        
-        <echo message="Building Rebex.Castle for .NET CF..." />
-        <exec program="${msbuild.4.6.exe}" workingdir="Rebex.Castle" 
-              commandline="Rebex.Castle.CF.csproj /p:DefineConstants=&quot;NETCF_1_0;TRACE;LITE&quot; /p:TargetFrameworkVersion=v2.0 ${msbuild.common.params}" />
-        
         <echo message="Building Rebex.Castle for .NET 2.0..." />
         <exec program="${msbuild.4.6.exe}" workingdir="Rebex.Castle"
               commandline="Rebex.Castle.CF.csproj /p:DefineConstants=&quot;TRACE;LITE&quot; /p:TargetFrameworkVersion=v2.0 ${msbuild.common.params}" />
         
+        <echo message="Building Rebex.Castle for .NET CF..." />
+        <exec program="${msbuild.4.6.exe}" workingdir="Rebex.Castle" 
+              commandline="Rebex.Castle.CF.csproj /p:DefineConstants=&quot;NETCF_1_0;TRACE;LITE&quot; /p:TargetFrameworkVersion=v2.0 ${msbuild.common.params}" />
         <!-- for some odd reason the 2.0 build fails with documentation enabled -->
         <copy file="Rebex.Castle/bin/Release/netcf20/Rebex.Castle.xml" tofile="Rebex.Castle/bin/Release/net20/Rebex.Castle.xml" />
+        
+        <echo message="Building Rebex.Castle PCL version..." />
+        <exec program="${msbuild.15.exe}" workingdir="Rebex.Castle.Portable"
+              commandline="Rebex.Castle.Portable.csproj ${msbuild.common.params}" />
         
         <copy todir="../tmp/Rebex.Castle/lib">
             <fileset basedir="Rebex.Castle/bin/Release">
@@ -128,6 +125,8 @@
     </target>
 
     <target name="bin.curve25519">
+        <!-- no PCL version because PCL doesn't support System.Security.Cryptography stuff (e.g. RNG) -->
+    
         <echo message="Building Rebex.Curve25519..." />
         <exec program="${msbuild.15.exe}" workingdir="Rebex.Curve25519" 
               commandline="Rebex.Curve25519.csproj ${msbuild.common.params}" />
@@ -139,6 +138,12 @@
               <echo message="Building Rebex.Curve25519 for Xamarin iOS..." />
         <exec program="${msbuild.15.exe}" workingdir="Rebex.Curve25519.iOS" 
               commandline="Rebex.Curve25519.iOS.csproj ${msbuild.common.params}" />
+        
+        <!-- config produced by slnbuild -->
+        <echo message="Building Rebex.Curve25519 for Xamarin Mac..." />
+        <mkdir dir="Rebex.Curve25519/bin/Release/xamarinmac" />
+        <exec program="${csc.15.exe}" workingdir="Rebex.Curve25519.iOS"
+              commandline="/noconfig @cscargs.mac.txt" />
         
         <echo message="Building Rebex.Curve25519 for .NET CF..." />
         <exec program="${msbuild.4.6.exe}" workingdir="Rebex.Curve25519"

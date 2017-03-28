@@ -3,7 +3,7 @@ using System;
 [assembly: CLSCompliant(true)]
 #endif
 
-#if ANDROID || IOS
+#if ANDROID || IOS || PORTABLE
 using System.Reflection;
 using System.Runtime.InteropServices;
 

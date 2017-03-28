@@ -37,13 +37,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rebex.Castle", "Rebex.Castl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rebex.Curve25519", "Rebex.Curve25519\Rebex.Curve25519.csproj", "{CFA77D07-1A39-4635-882B-4A45DA7D40BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebex.Castle.Android", "Rebex.Castle.Android\Rebex.Castle.Android.csproj", "{0E338ADB-7089-4E1B-AC20-A84DB828D79D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebex.Castle.iOS", "Rebex.Castle.iOS\Rebex.Castle.iOS.csproj", "{3FFD0CF2-A4B5-45EA-B381-46FA5B09A77B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebex.Curve25519.iOS", "Rebex.Curve25519.iOS\Rebex.Curve25519.iOS.csproj", "{319B596F-86FD-4EE7-9852-F52BC228C1C0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebex.Curve25519.Android", "Rebex.Curve25519.Android\Rebex.Curve25519.Android.csproj", "{99CC4582-2319-43AD-B339-2433B17945E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebex.Castle.Portable", "Rebex.Castle.Portable\Rebex.Castle.Portable.csproj", "{4E5CBE18-1E8B-4B9D-8EDF-85851334402C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,14 +77,6 @@ Global
 		{CFA77D07-1A39-4635-882B-4A45DA7D40BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFA77D07-1A39-4635-882B-4A45DA7D40BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFA77D07-1A39-4635-882B-4A45DA7D40BC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0E338ADB-7089-4E1B-AC20-A84DB828D79D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0E338ADB-7089-4E1B-AC20-A84DB828D79D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0E338ADB-7089-4E1B-AC20-A84DB828D79D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0E338ADB-7089-4E1B-AC20-A84DB828D79D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3FFD0CF2-A4B5-45EA-B381-46FA5B09A77B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3FFD0CF2-A4B5-45EA-B381-46FA5B09A77B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3FFD0CF2-A4B5-45EA-B381-46FA5B09A77B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3FFD0CF2-A4B5-45EA-B381-46FA5B09A77B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{319B596F-86FD-4EE7-9852-F52BC228C1C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{319B596F-86FD-4EE7-9852-F52BC228C1C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{319B596F-86FD-4EE7-9852-F52BC228C1C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -95,6 +85,10 @@ Global
 		{99CC4582-2319-43AD-B339-2433B17945E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99CC4582-2319-43AD-B339-2433B17945E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99CC4582-2319-43AD-B339-2433B17945E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E5CBE18-1E8B-4B9D-8EDF-85851334402C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E5CBE18-1E8B-4B9D-8EDF-85851334402C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E5CBE18-1E8B-4B9D-8EDF-85851334402C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E5CBE18-1E8B-4B9D-8EDF-85851334402C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
