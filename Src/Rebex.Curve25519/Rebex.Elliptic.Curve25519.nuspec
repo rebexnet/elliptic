@@ -3,7 +3,7 @@
   <metadata>
     <id>Rebex.Elliptic.Curve25519</id>
     <title>Rebex.Elliptic.Curve25519</title>
-    <version>0.9.2-rc3</version>
+    <version>0.9.2</version>
     <authors>Rebex CR, s.r.o.</authors>
     <owners>Rebex CR, s.r.o.</owners>
     <licenseUrl>https://github.com/rebexnet/elliptic/blob/174348a578efc2aa36e349d6a6de4a57bce14a5e/Src/Rebex.Curve25519/LICENSE</licenseUrl>
