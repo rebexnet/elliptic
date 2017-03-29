@@ -16,16 +16,14 @@
       <group targetFramework=".NETFramework4.0">
         <dependency id="Portable.BouncyCastle" version="1.8.1.2" />
       </group>
-      <group targetFramework=".NETPortable4.0-Profile328">
-        <dependency id="Portable.BouncyCastle" version="1.8.1.2" />
-      </group>
+      <group targetFramework=".NETPortable4.0-Profile5" />
       <group targetFramework=".NETStandard1.6">
         <dependency id="NETStandard.Library" version="[1.6.0, )" />
         <dependency id="Portable.BouncyCastle" version="1.8.1.2" />
       </group>
     </dependencies>
     <frameworkAssemblies>
-      <frameworkAssembly assemblyName="mscorlib" targetFramework=".NETPortable4.0-Profile328" />
+      <frameworkAssembly assemblyName="mscorlib" targetFramework=".NETPortable4.0-Profile5" />
     </frameworkAssemblies>
     <releaseNotes>New tooling (VS 2017), support for Xamarin Android and iOS</releaseNotes>
   </metadata>
