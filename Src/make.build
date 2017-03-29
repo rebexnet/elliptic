@@ -2,19 +2,21 @@
 
 <project name="crypto" default="help" xmlns="http://tempuri.org/nant-donotuse.xsd">
 
+    <property name="keyfile" readonly="true" unless="${property::exists('keyfile')}" value="c:\data\RebexKey.snk" />
+    
     <!-- replace by vswhere once it gets nuget-packaged -->
     <property name="vspath.15" readonly="true" value="c:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\amd64" />
     <property name="msbuild.15.exe" readonly="true" value="${vspath.15}\MSBuild.exe" />
     <property name="csc.15.exe" readonly="true" value="${vspath.15}\Roslyn\csc.exe" />
     <property name="msbuild.4.6.exe" readonly="true" value="c:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe" />
-    <property name="msbuild.common.params" readonly="true" value="/p:Configuration=Release /verbosity:minimal /nologo" />
+    <property name="msbuild.common.params" readonly="true" value="/p:Configuration=Release /verbosity:minimal /nologo /p:SignAssembly=true /p:AssemblyOriginatorKeyFile=${keyfile}" />
+    
     <property name="retarget.exe" readonly="true" value="Retarget/bin/Release/retarget.exe" />
-
+    
     <target name="help">
         <echo message="Usage:" />
         <echo message="  (dos)make bin         Build packages" />
         <echo message="  (dos)make clean       Clean build directories" />
-
     </target>
 
     <target name="clean">
@@ -90,8 +92,9 @@
     </target>
     
     <target name="bin.castle">
+        <echo message="Signing with ${keyfile}" />
         <echo message="Building Rebex.Castle for .NET 4.0 and netstandard..." />
-        <exec program="dotnet" workingdir="Rebex.Castle" commandline="build Rebex.Castle.csproj -c Release" />
+        <exec program="dotnet" workingdir="Rebex.Castle" commandline="build Rebex.Castle.csproj -c Release /p:SignAssembly=true /p:AssemblyOriginatorKeyFile=${keyfile}" />
         
         <echo message="Building Rebex.Castle for .NET 2.0..." />
         <exec program="${msbuild.4.6.exe}" workingdir="Rebex.Castle"
@@ -143,7 +146,7 @@
         <echo message="Building Rebex.Curve25519 for Xamarin Mac..." />
         <mkdir dir="Rebex.Curve25519/bin/Release/xamarinmac" />
         <exec program="${csc.15.exe}" workingdir="Rebex.Curve25519.iOS"
-              commandline="/noconfig @cscargs.mac.txt" />
+              commandline="/noconfig /keyfile:${keyfile} @cscargs.mac.txt" />
         
         <echo message="Building Rebex.Curve25519 for .NET CF..." />
         <exec program="${msbuild.4.6.exe}" workingdir="Rebex.Curve25519"
@@ -169,26 +172,18 @@
     <target name="bin.ed25519">
         <echo message="Building Rebex.Ed25519..." />
 
-        <exec program="${msbuild.15.exe}" verbose="false" workingdir="Rebex.Ed25519">
-            <arg value="/verbosity:quiet" />
-            <arg value="/p:Configuration=Release" />
-            <arg value="/p:SkipPlatformVerification=true" />
-            <arg value="Rebex.Ed25519.vcxproj" />
-        </exec>
+        <exec program="${msbuild.15.exe}" verbose="false" workingdir="Rebex.Ed25519"
+              commandline="Rebex.Ed25519.vcxproj ${msbuild.common.params} /p:SkipPlatformVerification=true" />
 
-        <exec program="${msbuild.15.exe}" verbose="false" workingdir="Rebex.Ed25519">
-            <arg value="/verbosity:quiet" />
-            <arg value="/p:Configuration=Release" />
-            <arg value="/p:SkipPlatformVerification=true" />
-            <arg value="Rebex.Ed25519.Core.vcxproj" />
-        </exec>
+        <exec program="${msbuild.15.exe}" verbose="false" workingdir="Rebex.Ed25519"
+              commandline="Rebex.Ed25519.Core.vcxproj ${msbuild.common.params} /p:SkipPlatformVerification=true" />
 
         <mkdir dir="../tmp/Rebex.Ed25519/lib/netstandard1.6" />
         <exec program="${retarget.exe}" verbose="false" workingdir="Rebex.Ed25519">
             <arg value="bin/core-1.0/Release/Rebex.Ed25519.dll" />
             <arg value="../../tmp/Rebex.Ed25519/lib/netstandard1.6/Rebex.Ed25519.dll" />
             <arg value="core-1.0" />
-            <!-- <arg value="c:/data/RebexKey.snk" /> -->
+            <arg value="${keyfile}" />
         </exec>
         <copy file="Rebex.Ed25519/bin/core-1.0/Release/Rebex.Ed25519.xml" todir="../tmp/Rebex.Ed25519/lib/netstandard1.6" />
 
@@ -197,7 +192,7 @@
             <arg value="bin/net40/Release/Rebex.Ed25519.dll" />
             <arg value="../../tmp/Rebex.Ed25519/lib/net40/Rebex.Ed25519.dll" />
             <arg value="net-4.0" />
-            <!-- <arg value="c:/data/RebexKey.snk" /> -->
+            <arg value="${keyfile}" />
             
         </exec>
         <copy file="Rebex.Ed25519/bin/net40/Release/Rebex.Ed25519.xml" todir="../tmp/Rebex.Ed25519/lib/net40" />
@@ -207,7 +202,7 @@
             <arg value="bin/net40/Release/Rebex.Ed25519.dll" />
             <arg value="../../tmp/Rebex.Ed25519/lib/net20/Rebex.Ed25519.dll" />
             <arg value="net-2.0" />
-            <!-- <arg value="c:/data/RebexKey.snk" /> -->
+            <arg value="${keyfile}" />
         </exec>
         <copy file="Rebex.Ed25519/bin/net40/Release/Rebex.Ed25519.xml" todir="../tmp/Rebex.Ed25519/lib/net20" />
 

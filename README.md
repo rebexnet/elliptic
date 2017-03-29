@@ -19,15 +19,15 @@ PM> Install-Package Rebex.Elliptic.Curve25519
 PM> Install-Package Rebex.Elliptic.Castle
 ```
 
-To enable the above mentioned plugins, add the following code to register them:
+To enable the abovementioned plugins, add the following code to register them:
 
 ```csharp
-        // import NISTP and Brainpool curves
-        AsymmetricKeyAlgorithm.Register(EllipticCurveAlgorithm.Create);
+// import NISTP and Brainpool curves
+AsymmetricKeyAlgorithm.Register(EllipticCurveAlgorithm.Create);
 
-        // import Curve25519
-        AsymmetricKeyAlgorithm.Register(Curve25519.Create);
+// import Curve25519
+AsymmetricKeyAlgorithm.Register(Curve25519.Create);
 
-        // import Ed25519
-        AsymmetricKeyAlgorithm.Register(Ed25519.Create);
+// import Ed25519
+AsymmetricKeyAlgorithm.Register(Ed25519.Create);
 ```

@@ -9,4 +9,4 @@ unset TMP
 unset TEMP
 
 .paket/paket.exe restore
-winpty packages/NAnt/tools/NAnt.exe $1
+winpty packages/NAnt/tools/NAnt.exe $1 $2 $3
