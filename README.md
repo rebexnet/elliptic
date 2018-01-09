@@ -13,6 +13,10 @@ These assemblies are based on:
 - [Ed25519 library](//github.com/orlp/ed25519) by Orson Peters, based on the SUPERCOP "ref10" implementation.
 - [BouncyCastle APIs](//hwww.bouncycastle.org/) by the Legion of the Bouncy Castle Inc.
 
+## Disclaimer
+
+Some or all of these algorithms might be susceptible to [timing attacks](https://research.kudelskisecurity.com/2017/01/16/when-constant-time-source-may-not-save-you/). ECDH key exchange in context of SSH and TLS/SSL is immune (a private key is only used once and then discarded), but we cannot wouch for ECDSA and EdDSA implementations.
+
 ## Installation
 
 The packages can be installed using [NuGet](https://www.nuget.org/profiles/rebex) package manager:
