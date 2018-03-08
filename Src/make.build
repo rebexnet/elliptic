@@ -5,7 +5,7 @@
     <property name="keyfile" readonly="true" unless="${property::exists('keyfile')}" value="c:\data\RebexKey.snk" />
     
     <!-- replace by vswhere once it gets nuget-packaged -->
-    <property name="vspath.15" readonly="true" value="c:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin\amd64" />
+    <property name="vspath.15" readonly="true" value="c:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin" />
     <property name="msbuild.15.exe" readonly="true" value="${vspath.15}\MSBuild.exe" />
     <property name="csc.15.exe" readonly="true" value="${vspath.15}\Roslyn\csc.exe" />
     <property name="msbuild.4.6.exe" readonly="true" value="c:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe" />
@@ -178,14 +178,14 @@
         <exec program="${msbuild.15.exe}" verbose="false" workingdir="Rebex.Ed25519"
               commandline="Rebex.Ed25519.Core.vcxproj ${msbuild.common.params} /p:SkipPlatformVerification=true" />
 
-        <mkdir dir="../tmp/Rebex.Ed25519/lib/netstandard1.6" />
+        <mkdir dir="../tmp/Rebex.Ed25519/lib/netstandard1.5" />
         <exec program="${retarget.exe}" verbose="false" workingdir="Rebex.Ed25519">
             <arg value="bin/core-1.0/Release/Rebex.Ed25519.dll" />
-            <arg value="../../tmp/Rebex.Ed25519/lib/netstandard1.6/Rebex.Ed25519.dll" />
+            <arg value="../../tmp/Rebex.Ed25519/lib/netstandard1.5/Rebex.Ed25519.dll" />
             <arg value="core-1.0" />
             <arg value="${keyfile}" />
         </exec>
-        <copy file="Rebex.Ed25519/bin/core-1.0/Release/Rebex.Ed25519.xml" todir="../tmp/Rebex.Ed25519/lib/netstandard1.6" />
+        <copy file="Rebex.Ed25519/bin/core-1.0/Release/Rebex.Ed25519.xml" todir="../tmp/Rebex.Ed25519/lib/netstandard1.5" />
 
         <mkdir dir="../tmp/Rebex.Ed25519/lib/net40" />
         <exec program="${retarget.exe}" verbose="false" workingdir="Rebex.Ed25519">

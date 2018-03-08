@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net40;netstandard1.6</TargetFrameworks>
+    <TargetFrameworks>net40;netstandard1.5</TargetFrameworks>
     <RootNamespace>Rebex.Security.Cryptography</RootNamespace>
   </PropertyGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.6'">
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.5'">
     <Reference Include="BouncyCastle.Crypto">
       <HintPath>..\..\packages\Portable.BouncyCastle\lib\netstandard1.3\BouncyCastle.Crypto.dll</HintPath>
     </Reference>

@@ -22,7 +22,7 @@
     <ProjectGuid>{6776DD78-76B6-45AB-A1B4-5E02F690937F}</ProjectGuid>
     <Keyword>ManagedCProj</Keyword>
     <RootNamespace>RebexEdDSA</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.10240.0</WindowsTargetPlatformVersion>
     <ProjectName>Rebex.Ed25519.Core</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

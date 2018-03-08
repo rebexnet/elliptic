@@ -14,13 +14,13 @@ namespace Corizer
 	public class Program
 	{
 		public const string Net40 = ".NETFramework,Version=v4.0";
-		public const string Standard16 = ".NETStandard,Version=v1.6";
+		public const string Standard15 = ".NETStandard,Version=v1.5";
 
 		public static int Main(string[] args)
 		{
 			if (args.Length < 3 || args.Length > 4)
 			{
-				Console.WriteLine("Utility for retargetting some Rebex .NET 4.0 assemblies to .NET Core and .NET 2.0");
+				Console.WriteLine("Utility for retargetting some Rebex .NET 4.0 assemblies to .NET Standard and .NET 2.0");
 				Console.WriteLine("Warning: This is not a general purpose utility; it only supports a single Rebex assembly (Rebex.Ed25519)");
 				Console.WriteLine();
 				Console.WriteLine("Usage:");
@@ -40,8 +40,8 @@ namespace Corizer
 			switch (framework)
 			{
 				case "core-1.0":
-				case Standard16:
-					framework = Standard16;
+				case Standard15:
+					framework = Standard15;
 					remap = true;
 					break;
 				case "net-4.0":
