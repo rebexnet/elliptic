@@ -3,12 +3,12 @@
   <metadata>
     <id>Rebex.Elliptic.Castle</id>
     <title>Rebex.Elliptic.Castle</title>
-    <version>0.9.3</version>
+    <version>1.0.0</version>
     <authors>Rebex CR, s.r.o.</authors>
     <owners>Rebex CR, s.r.o.</owners>
     <licenseUrl>https://github.com/rebexnet/elliptic/blob/174348a578efc2aa36e349d6a6de4a57bce14a5e/Src/Rebex.Castle/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Wrapper around BouncyCastle library that provides a simple API for Elliptic Curve algorithms</description>
+    <description>Wrapper around BouncyCastle library that provides a simple API for Elliptic Curve algorithms.</description>
     <tags>ECC ECDH brainpool nistp256 nistp384 nistp521 elliptic cryptography Diffie-Hellman</tags>
     <projectUrl>https://labs.rebex.net/curves</projectUrl>
     <dependencies>
@@ -25,6 +25,5 @@
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="mscorlib" targetFramework=".NETPortable4.0-Profile5" />
     </frameworkAssemblies>
-    <releaseNotes>Added support for .NET Standard 1.5</releaseNotes>
   </metadata>
 </package>

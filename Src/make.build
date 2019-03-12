@@ -193,10 +193,27 @@
             <arg value="../../tmp/Rebex.Ed25519/lib/net40/Rebex.Ed25519.dll" />
             <arg value="net-4.0" />
             <arg value="${keyfile}" />
-            
         </exec>
         <copy file="Rebex.Ed25519/bin/net40/Release/Rebex.Ed25519.xml" todir="../tmp/Rebex.Ed25519/lib/net40" />
 
+        <mkdir dir="../tmp/Rebex.Ed25519/lib/monoandroid40" />
+        <exec program="${retarget.exe}" verbose="false" workingdir="Rebex.Ed25519">
+            <arg value="bin/net40/Release/Rebex.Ed25519.dll" />
+            <arg value="../../tmp/Rebex.Ed25519/lib/monoandroid40/Rebex.Ed25519.dll" />
+            <arg value="xamarin" />
+            <arg value="${keyfile}" />
+        </exec>
+        <copy file="Rebex.Ed25519/bin/net40/Release/Rebex.Ed25519.xml" todir="../tmp/Rebex.Ed25519/lib/monoandroid40" />
+
+        <mkdir dir="../tmp/Rebex.Ed25519/lib/xamarinios10" />
+        <exec program="${retarget.exe}" verbose="false" workingdir="Rebex.Ed25519">
+            <arg value="bin/net40/Release/Rebex.Ed25519.dll" />
+            <arg value="../../tmp/Rebex.Ed25519/lib/xamarinios10/Rebex.Ed25519.dll" />
+            <arg value="xamarin" />
+            <arg value="${keyfile}" />
+        </exec>
+        <copy file="Rebex.Ed25519/bin/net40/Release/Rebex.Ed25519.xml" todir="../tmp/Rebex.Ed25519/lib/xamarinios10" />
+        
         <mkdir dir="../tmp/Rebex.Ed25519/lib/net20" />
         <exec program="${retarget.exe}" verbose="false" workingdir="Rebex.Ed25519">
             <arg value="bin/net40/Release/Rebex.Ed25519.dll" />

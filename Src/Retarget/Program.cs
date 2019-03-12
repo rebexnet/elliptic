@@ -58,6 +58,11 @@ namespace Corizer
 					corlibVersion = "2.0.0.0";
 					corlibToken = "969db8053d3322ac";
 					break;
+				case "xamarin":
+					framework = null;
+					corlibVersion = "2.0.5.0";
+					corlibToken = "7cec85d7bea7798e";
+					break;
 				default:
 					Console.WriteLine("Framework not supported: " + framework);
 					return 2;
