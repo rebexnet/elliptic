@@ -31,7 +31,7 @@
         </delete>
     </target>
 
-    <target name="bin" depends="restore,bin.retarget,bin.castle,bin.curve25519,bin.ed25519,bin.ed25519.cf,pack-all">
+    <target name="bin" depends="restore,bin.retarget,bin.modules,pack-all">
     </target>
     
     <target name="restore">
@@ -63,10 +63,6 @@
                 <include name="**/*.dll" />
                 <include name="**/*.xml" />
             </fileset>
-            <fileset basedir="../packages/Portable.BouncyCastle/lib/net4" prefix="net40">
-                <include name="**/*.dll" />
-                <include name="**/*.xml" />
-            </fileset>
             <fileset basedir="..">
                 <include name="README.*" />
             </fileset>
@@ -78,163 +74,57 @@
             </fileset>
             <fileset basedir="../src/Rebex.Ed25519" prefix="licenses/Rebex.Ed25519">
                 <include name="LICENSE" />
-                <include name="LICENSE-original" />
             </fileset>
-            
         </zip>
     </target>
 
     <target name="bin.retarget">
-        <echo message="Building .NET Core Retarget..." />
+        <echo message="Building retargeting utility..." />
         <exec program="dotnet" workingdir="Retarget" commandline="build -c Release Retarget.csproj" />
 
         <fail message="retarget.exe not found" if="${not file::exists(retarget.exe)}" />
     </target>
     
-    <target name="bin.castle">
-        <echo message="Signing with ${keyfile}" />
-        <echo message="Building Rebex.Castle for .NET 4.0 and netstandard..." />
-        <exec program="dotnet" workingdir="Rebex.Castle" commandline="build Rebex.Castle.csproj -c Release /p:SignAssembly=true /p:AssemblyOriginatorKeyFile=${keyfile}" />
-        
-        <echo message="Building Rebex.Castle for .NET 2.0..." />
-        <exec program="${msbuild.4.6.exe}" workingdir="Rebex.Castle"
-              commandline="Rebex.Castle.CF.csproj /p:DefineConstants=&quot;TRACE;LITE&quot; /p:TargetFrameworkVersion=v2.0 ${msbuild.common.params}" />
-        
-        <echo message="Building Rebex.Castle for .NET CF..." />
-        <exec program="${msbuild.4.6.exe}" workingdir="Rebex.Castle" 
-              commandline="Rebex.Castle.CF.csproj /p:DefineConstants=&quot;NETCF_1_0;TRACE;LITE&quot; /p:TargetFrameworkVersion=v2.0 ${msbuild.common.params}" />
-        <!-- for some odd reason the 2.0 build fails with documentation enabled -->
-        <copy file="Rebex.Castle/bin/Release/netcf20/Rebex.Castle.xml" tofile="Rebex.Castle/bin/Release/net20/Rebex.Castle.xml" />
-        
-        <echo message="Building Rebex.Castle PCL version..." />
-        <exec program="${msbuild.15.exe}" workingdir="Rebex.Castle.Portable"
-              commandline="Rebex.Castle.Portable.csproj ${msbuild.common.params}" />
-        
-        <copy todir="../tmp/Rebex.Castle/lib">
-            <fileset basedir="Rebex.Castle/bin/Release">
-                <include name="**/Rebex.Castle.dll" />
-                <include name="**/Rebex.Castle.xml" />
-            </fileset>
-        </copy>
-        
-        <copy file="Rebex.Castle/Rebex.Elliptic.Castle.nuspec" tofile="../tmp/Rebex.Castle/Rebex.Elliptic.Castle.nuspec" />
-        
-        <exec program="nuget" workingdir="../tmp/Rebex.Castle" commandline="pack" />
-        <copy todir="../out" flatten="true">
-            <fileset basedir="../tmp/Rebex.Castle">
-                <include name="Rebex.Elliptic.Castle.*.nupkg" />
-            </fileset>
-        </copy>
-    </target>
+    <target name="bin.modules">
+        <echo message="Building..." />
 
-    <target name="bin.curve25519">
-        <!-- no PCL version because PCL doesn't support System.Security.Cryptography stuff (e.g. RNG) -->
-    
-        <echo message="Building Rebex.Curve25519..." />
-        <exec program="${msbuild.15.exe}" workingdir="Rebex.Curve25519" 
-              commandline="Rebex.Curve25519.csproj ${msbuild.common.params}" />
-
-        <echo message="Building Rebex.Curve25519 for .NET CF..." />
-        <exec program="${msbuild.4.6.exe}" workingdir="Rebex.Curve25519"
-              commandline="Rebex.Curve25519.CF.csproj ${msbuild.common.params}" />
+        <foreach item="String" in="Castle;Curve25519;Ed25519" delim=";" property="module">
+            <exec program="${msbuild.15.exe}" workingdir="Rebex.${module}" commandline="Rebex.${module}.csproj /p:TargetFramework=net20 /p:Configuration=Release /p:SignAssembly=true /p:AssemblyOriginatorKeyFile=${keyfile}" />
+            <exec program="dotnet" workingdir="Rebex.${module}" commandline="build Rebex.${module}.csproj -c Release -f netstandard2.0 /p:SignAssembly=true /p:AssemblyOriginatorKeyFile=${keyfile}" />
+            <exec program="dotnet" workingdir="Rebex.${module}" commandline="build Rebex.${module}.csproj -c Release -f netstandard1.5 /p:SignAssembly=true /p:AssemblyOriginatorKeyFile=${keyfile}" />
+            <exec program="dotnet" workingdir="Rebex.${module}" commandline="build Rebex.${module}.csproj -c Release -f net40 /p:SignAssembly=true /p:AssemblyOriginatorKeyFile=${keyfile}" />
         
-        <copy todir="../tmp/Rebex.Curve25519/lib">
-            <fileset basedir="Rebex.Curve25519/bin/Release">
-                <include name="**/Rebex.Curve25519.*" />
-            </fileset>
-        </copy>
-        
-        <copy file="Rebex.Curve25519/Rebex.Elliptic.Curve25519.nuspec" tofile="../tmp/Rebex.Curve25519/Rebex.Elliptic.Curve25519.nuspec" />
+            <copy todir="../tmp/Rebex.${module}/lib">
+                <fileset basedir="Rebex.${module}/bin/Release">
+                    <include name="**/Rebex.${module}.xml" />
+                </fileset>
+            </copy>
 
-        <exec program="nuget" verbose="false" workingdir="../tmp/Rebex.Curve25519" commandline="pack" />
-        
-        <copy todir="../out" flatten="true">
-            <fileset basedir="../tmp/Rebex.Curve25519">
-                <include name="Rebex.Elliptic.Curve25519.*.nupkg" />
-            </fileset>
-        </copy>
-    </target>
+            <foreach item="String" in="net20;net40;netstandard1.5;netstandard2.0" delim=";" property="platform">
+                <exec program="${retarget.exe}" verbose="false" workingdir="Rebex.${module}">
+                    <arg value="bin/Release/${platform}/Rebex.${module}.dll" />
+                    <arg value="../../tmp/Rebex.${module}/lib/${platform}/Rebex.${module}.dll" />
+                    <arg value="current" />
+                    <arg value="${keyfile}" />
+                </exec>
+            </foreach>
 
-    <target name="bin.ed25519">
-        <echo message="Building Rebex.Ed25519..." />
+            <mkdir dir="../tmp/Rebex.${module}/lib/monoandroid40" />
+            <exec program="${retarget.exe}" verbose="false" workingdir="Rebex.${module}">
+                <arg value="bin/Release/net40/Rebex.${module}.dll" />
+                <arg value="../../tmp/Rebex.${module}/lib/monoandroid40/Rebex.${module}.dll" />
+                <arg value="xamarin" />
+                <arg value="${keyfile}" />
+            </exec>
+            <copy file="Rebex.${module}/bin/Release/net40/Rebex.${module}.xml" todir="../tmp/Rebex.${module}/lib/monoandroid40" />
 
-        <exec program="${msbuild.15.exe}" verbose="false" workingdir="Rebex.Ed25519"
-              commandline="Rebex.Ed25519.vcxproj ${msbuild.common.params} /p:SkipPlatformVerification=true" />
+            <copy file="../tmp/Rebex.${module}/lib/monoandroid40/Rebex.${module}.dll" todir="../tmp/Rebex.${module}/lib/xamarinios10" />
+            <copy file="Rebex.${module}/bin/Release/net40/Rebex.${module}.xml" todir="../tmp/Rebex.${module}/lib/xamarinios10" />            
+                
+            <exec program="nuget" workingdir="Rebex.${module}" commandline="pack Rebex.Elliptic.${module}.nuspec -BasePath ../../tmp/Rebex.${module} -OutputDirectory ../../out" />
 
-        <exec program="${msbuild.15.exe}" verbose="false" workingdir="Rebex.Ed25519"
-              commandline="Rebex.Ed25519.Core.vcxproj ${msbuild.common.params} /p:SkipPlatformVerification=true" />
-
-        <mkdir dir="../tmp/Rebex.Ed25519/lib/netstandard1.5" />
-        <exec program="${retarget.exe}" verbose="false" workingdir="Rebex.Ed25519">
-            <arg value="bin/core-1.0/Release/Rebex.Ed25519.dll" />
-            <arg value="../../tmp/Rebex.Ed25519/lib/netstandard1.5/Rebex.Ed25519.dll" />
-            <arg value="core-1.0" />
-            <arg value="${keyfile}" />
-        </exec>
-        <copy file="Rebex.Ed25519/bin/core-1.0/Release/Rebex.Ed25519.xml" todir="../tmp/Rebex.Ed25519/lib/netstandard1.5" />
-
-        <mkdir dir="../tmp/Rebex.Ed25519/lib/net40" />
-        <exec program="${retarget.exe}" verbose="false" workingdir="Rebex.Ed25519">
-            <arg value="bin/net40/Release/Rebex.Ed25519.dll" />
-            <arg value="../../tmp/Rebex.Ed25519/lib/net40/Rebex.Ed25519.dll" />
-            <arg value="net-4.0" />
-            <arg value="${keyfile}" />
-        </exec>
-        <copy file="Rebex.Ed25519/bin/net40/Release/Rebex.Ed25519.xml" todir="../tmp/Rebex.Ed25519/lib/net40" />
-
-        <mkdir dir="../tmp/Rebex.Ed25519/lib/monoandroid40" />
-        <exec program="${retarget.exe}" verbose="false" workingdir="Rebex.Ed25519">
-            <arg value="bin/net40/Release/Rebex.Ed25519.dll" />
-            <arg value="../../tmp/Rebex.Ed25519/lib/monoandroid40/Rebex.Ed25519.dll" />
-            <arg value="xamarin" />
-            <arg value="${keyfile}" />
-        </exec>
-        <copy file="Rebex.Ed25519/bin/net40/Release/Rebex.Ed25519.xml" todir="../tmp/Rebex.Ed25519/lib/monoandroid40" />
-
-        <mkdir dir="../tmp/Rebex.Ed25519/lib/xamarinios10" />
-        <exec program="${retarget.exe}" verbose="false" workingdir="Rebex.Ed25519">
-            <arg value="bin/net40/Release/Rebex.Ed25519.dll" />
-            <arg value="../../tmp/Rebex.Ed25519/lib/xamarinios10/Rebex.Ed25519.dll" />
-            <arg value="xamarin" />
-            <arg value="${keyfile}" />
-        </exec>
-        <copy file="Rebex.Ed25519/bin/net40/Release/Rebex.Ed25519.xml" todir="../tmp/Rebex.Ed25519/lib/xamarinios10" />
-        
-        <mkdir dir="../tmp/Rebex.Ed25519/lib/net20" />
-        <exec program="${retarget.exe}" verbose="false" workingdir="Rebex.Ed25519">
-            <arg value="bin/net40/Release/Rebex.Ed25519.dll" />
-            <arg value="../../tmp/Rebex.Ed25519/lib/net20/Rebex.Ed25519.dll" />
-            <arg value="net-2.0" />
-            <arg value="${keyfile}" />
-        </exec>
-        <copy file="Rebex.Ed25519/bin/net40/Release/Rebex.Ed25519.xml" todir="../tmp/Rebex.Ed25519/lib/net20" />
-
-        <copy file="Rebex.Ed25519/Rebex.Elliptic.Ed25519.nuspec" todir="../tmp/Rebex.Ed25519" />
-        <exec program="nuget " verbose="false" workingdir="../tmp/Rebex.Ed25519">
-            <arg value="pack" />
-        </exec>
-        
-        <copy todir="../out" flatten="true">
-            <fileset basedir="../tmp/Rebex.Ed25519">
-                <include name="Rebex.Elliptic.Ed25519.*.nupkg" />
-            </fileset>
-        </copy>
+        </foreach>
 
     </target>
 
-    <target name="bin.ed25519.cf" depends="bin.ed25519">
-        <!-- .NET CF version does not work yet due to missing SHA512 -->
-        <!--        
-        <echo message="Building Rebex.Ed25519 for legacy platforms..." />
-
-        <copy file="Rebex.Ed25519/bin/net-4.0/Release/Rebex.Ed25519.xml" todir="../out/netcf-2.0" />
-        <exec program="${retarget.exe}" verbose="false">
-            <arg value="Rebex.Ed25519/bin/net-4.0/Release/Rebex.Ed25519.dll" />
-            <arg value="../out/netcf-2.0/Rebex.Ed25519.dll" />
-            <arg value="netcf-2.0" />
-            <arg value="c:/data/RebexKey.snk" />
-        </exec>
-        -->
-
-    </target>
 </project>
