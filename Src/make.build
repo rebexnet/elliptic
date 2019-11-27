@@ -133,21 +133,7 @@
         <echo message="Building Rebex.Curve25519..." />
         <exec program="${msbuild.15.exe}" workingdir="Rebex.Curve25519" 
               commandline="Rebex.Curve25519.csproj ${msbuild.common.params}" />
-        
-        <echo message="Building Rebex.Curve25519 for Xamarin Android..." />
-        <exec program="${msbuild.15.exe}" workingdir="Rebex.Curve25519.Android" 
-              commandline="Rebex.Curve25519.Android.csproj ${msbuild.common.params}" />
 
-              <echo message="Building Rebex.Curve25519 for Xamarin iOS..." />
-        <exec program="${msbuild.15.exe}" workingdir="Rebex.Curve25519.iOS" 
-              commandline="Rebex.Curve25519.iOS.csproj ${msbuild.common.params}" />
-        
-        <!-- config produced by slnbuild -->
-        <echo message="Building Rebex.Curve25519 for Xamarin Mac..." />
-        <mkdir dir="Rebex.Curve25519/bin/Release/xamarinmac" />
-        <exec program="${csc.15.exe}" workingdir="Rebex.Curve25519.iOS"
-              commandline="/noconfig /keyfile:${keyfile} @cscargs.mac.txt" />
-        
         <echo message="Building Rebex.Curve25519 for .NET CF..." />
         <exec program="${msbuild.4.6.exe}" workingdir="Rebex.Curve25519"
               commandline="Rebex.Curve25519.CF.csproj ${msbuild.common.params}" />
