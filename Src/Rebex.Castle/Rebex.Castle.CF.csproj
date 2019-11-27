@@ -10,61 +10,58 @@
     <RootNamespace>Rebex.Security.Cryptography</RootNamespace>
     <AssemblyName>Rebex.Castle</AssemblyName>
     <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <DeployDirSuffix>Rebex.Castle</DeployDirSuffix>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <ExcludeGeneratedDebugSymbol>false</ExcludeGeneratedDebugSymbol>
-    <TargetFrameworkVersion Condition=" '$(TargetFrameworkVersion)' == '' ">v2.0</TargetFrameworkVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\netcf-2.0\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;NETCF_1_0;LITE</DefineConstants>
-    <NoWarn>1591;618;108</NoWarn>
-    <NoStdLib>true</NoStdLib>
-    <NoConfig>true</NoConfig>
-    <ErrorReport>prompt</ErrorReport>
-    <FileAlignment>512</FileAlignment>
-    <WarningLevel>4</WarningLevel>
-    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-    <DocumentationFile>
-    </DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Optimize>true</Optimize>
-    <!-- <DefineConstants>TRACE;NETCF_1_0;LITE</DefineConstants> -->
-    <NoWarn>1591;618;108</NoWarn>
-    <NoStdLib>true</NoStdLib>
-    <NoConfig>true</NoConfig>
-    <ErrorReport>prompt</ErrorReport>
-    <FileAlignment>512</FileAlignment>
-    <WarningLevel>4</WarningLevel>
-    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-    
-  </PropertyGroup>
-  <PropertyGroup Condition=" $(DefineConstants.Contains('NETCF_1_0')) ">
     <PlatformFamilyName>WindowsCE</PlatformFamilyName>
     <PlatformID>E2BECB1F-8C8C-41ba-B736-9BE7D946A398</PlatformID>
-    <OSVersion>5.0</OSVersion>
+    <OSVersion>5.00</OSVersion>
+    <DeployDirSuffix>Rebex.Common</DeployDirSuffix>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <NativePlatformName>Windows CE</NativePlatformName>
-    <FormFactorID />
-    <OutputPath>bin\Release\netcf20\</OutputPath>
-    <DocumentationFile>bin\Release\netcf20\Rebex.Castle.xml</DocumentationFile>
+    <FormFactorID>
+    </FormFactorID>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(TargetFrameworkVersion)' == 'v2.0' And ! $(DefineConstants.Contains('NETCF_1_0')) ">
-    <OutputPath>bin\Release\net20\</OutputPath>
-    <!--<DocumentationFile>bin\Release\net20\Rebex.Castle.xml</DocumentationFile>-->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>0</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE;DEBUG;LITE;NETCF_2_0</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NoConfig>true</NoConfig>
+    <GenerateSerializationAssemblies>off</GenerateSerializationAssemblies>
+    <NoWarn>1591;618</NoWarn>
+    <NoStdLib>true</NoStdLib>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(TargetFrameworkVersion)' == 'v4.0' And ! $(DefineConstants.Contains('NETCF_1_0')) ">
-    <OutputPath>bin\Release\net40\</OutputPath>
-    <DocumentationFile>bin\Release\net40\Rebex.Castle.xml</DocumentationFile>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>0</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>LITE;NETCF_2_0</DefineConstants>
+    <DocumentationFile>bin\Release\Rebex.Castle.xml</DocumentationFile>
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <Optimize>true</Optimize>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NoConfig>true</NoConfig>
+    <GenerateSerializationAssemblies>off</GenerateSerializationAssemblies>
+    <NoStdLib>true</NoStdLib>
+    <NoWarn>1591;618</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
     <Reference Include="System" />
-    <Reference Include="Portable.BouncyCastle.dll" Condition=" '$(TargetFrameworkVersion)' == 'v4.0' ">
-        <HintPath>..\..\packages\Portable.BouncyCastle\lib\net4\BouncyCastle.Crypto.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ECKeyParametersExt.cs" />
@@ -73,7 +70,7 @@
     <Compile Include="EllipticCurveAlgorithm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup Condition=" '$(TargetFrameworkVersion)' == 'v2.0' ">
+  <ItemGroup>
     <Compile Include="..\..\external\bouncyeccf\crypto\src\crypto\agreement\ECDHBasicAgreement.cs">
       <Link>BouncyCastle\crypto\agreement\ECDHBasicAgreement.cs</Link>
     </Compile>
@@ -1215,8 +1212,9 @@
       <Link>BouncyCastle\util\TypeExtensions.cs</Link>
     </Compile>
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" Condition=" $(DefineConstants.Contains('NETCF_1_0')) " />
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" Condition=" ! $(DefineConstants.Contains('NETCF_1_0')) " />
+  <ItemGroup />
+  <Import Condition="'$(TargetFrameworkVersion)' == 'v1.0'" Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.v1.targets" />
+  <Import Condition="'$(TargetFrameworkVersion)' == 'v2.0'" Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
@@ -1224,11 +1222,8 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
+  <Import Condition="'$(TargetFrameworkVersion)' == 'v3.5'" Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <Target Name="PlatformVerificationTask" Condition="'$(SkipPlatformVerification)' != 'true'">
+    <PlatformVerificationTask PlatformFamilyName="$(PlatformFamilyName)" PlatformID="$(PlatformID)" SourceAssembly="@(IntermediateAssembly)" ReferencePath="@(ReferencePath)" TreatWarningsAsErrors="$(TreatWarningsAsErrors)" PlatformVersion="$(TargetFrameworkVersion)" />
   </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
