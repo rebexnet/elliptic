@@ -10,7 +10,7 @@ To work around these limitations, we provide a set of assemblies that provide a 
 
 These assemblies are based on:
 - [Curve25519 library](//github.com/hanswolff/curve25519) by Hans Wolff, based on previous work by Dmitry Skiba [sahn0] and Matthijs van Duin.
-- [Ed25519 library](//github.com/orlp/ed25519) by Orson Peters, based on the SUPERCOP "ref10" implementation.
+- [Ed25519 library](//github.com/CodesInChaos/Chaos.NaCl) by Christian Winnerlein (CodesInChaos), based on the SUPERCOP "ref10" implementation.
 - [BouncyCastle APIs](//hwww.bouncycastle.org/) by the Legion of the Bouncy Castle Inc.
 
 ## Disclaimer
