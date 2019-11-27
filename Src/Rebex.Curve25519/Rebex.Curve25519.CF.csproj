@@ -14,7 +14,7 @@
     <PlatformID>E2BECB1F-8C8C-41ba-B736-9BE7D946A398</PlatformID>
     <OSVersion>5.0</OSVersion>
     <DeployDirSuffix>Rebex.Curve25519.CF</DeployDirSuffix>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <NativePlatformName>Windows CE</NativePlatformName>
     <FormFactorID>
     </FormFactorID>
@@ -23,27 +23,29 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\netcf20\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;NETCF_1_0</DefineConstants>
-    <NoStdLib>true</NoStdLib>
+    <OutputPath>bin\Debug\net35-cf\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NETCF_2_0</DefineConstants>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
     <FileAlignment>512</FileAlignment>
     <WarningLevel>4</WarningLevel>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <NoStdLib>true</NoStdLib>
+    <DocumentationFile>bin\Debug\net35-cf\Rebex.Curve25519.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\netcf20\</OutputPath>
-    <DefineConstants>TRACE;NETCF_1_0</DefineConstants>
-    <NoStdLib>true</NoStdLib>
+    <OutputPath>bin\Release\net35-cf\</OutputPath>
+    <DefineConstants>NETCF_2_0</DefineConstants>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
     <FileAlignment>512</FileAlignment>
     <WarningLevel>4</WarningLevel>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-    <DocumentationFile>bin\Release\netcf20\Rebex.Curve25519.xml</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoStdLib>true</NoStdLib>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
