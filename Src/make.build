@@ -40,7 +40,7 @@
         
         <exec program="dotnet" commandline="restore Crypto.sln" />
         
-        <if test="${not file::exists('../external/bouncyeccf/.git')}">
+        <if test="${not file::exists('../external/bouncyeccf/.git') or not file::exists('../external/Chaos.NaCl/.git')}">
             <exec program="git">
                 <arg line="submodule init" />
             </exec>
