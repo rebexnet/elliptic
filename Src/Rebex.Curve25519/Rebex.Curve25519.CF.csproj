@@ -43,8 +43,7 @@
     <FileAlignment>512</FileAlignment>
     <WarningLevel>4</WarningLevel>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-    <DocumentationFile>
-    </DocumentationFile>
+    <DocumentationFile>bin\Release\net35-cf\Rebex.Curve25519.xml</DocumentationFile>
     <NoStdLib>true</NoStdLib>
   </PropertyGroup>
   <ItemGroup>

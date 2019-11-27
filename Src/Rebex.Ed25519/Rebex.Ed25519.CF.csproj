@@ -45,6 +45,7 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <DocumentationFile>bin\Release\net35-cf\Rebex.Ed25519.xml</DocumentationFile>
     <NoStdLib>true</NoStdLib>
+    <NoWarn>1591</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
