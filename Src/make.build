@@ -11,7 +11,7 @@
     <property name="msbuild.4.6.exe" readonly="true" value="c:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe" />
     <property name="msbuild.common.params" readonly="true" value="/p:Configuration=Release /verbosity:minimal /nologo /p:SignAssembly=true /p:AssemblyOriginatorKeyFile=${keyfile}" />
     
-    <property name="retarget.exe" readonly="true" value="Retarget/bin/Release/retarget.exe" />
+    <property name="retarget.exe" readonly="true" value="Retarget/bin/Release/net40/retarget.exe" />
     
     <target name="help">
         <echo message="Usage:" />
