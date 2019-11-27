@@ -1213,8 +1213,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup />
-  <Import Condition="'$(TargetFrameworkVersion)' == 'v1.0'" Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.v1.targets" />
-  <Import Condition="'$(TargetFrameworkVersion)' == 'v2.0'" Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
@@ -1222,8 +1221,11 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <Import Condition="'$(TargetFrameworkVersion)' == 'v3.5'" Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
-  <Target Name="PlatformVerificationTask" Condition="'$(SkipPlatformVerification)' != 'true'">
-    <PlatformVerificationTask PlatformFamilyName="$(PlatformFamilyName)" PlatformID="$(PlatformID)" SourceAssembly="@(IntermediateAssembly)" ReferencePath="@(ReferencePath)" TreatWarningsAsErrors="$(TreatWarningsAsErrors)" PlatformVersion="$(TargetFrameworkVersion)" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
   </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>
