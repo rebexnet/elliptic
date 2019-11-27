@@ -49,7 +49,7 @@ namespace Rebex.Security.Cryptography
         private void GenerateKeyPair()
         {
             var seed = new byte[Ed25519Inner.PrivateKeySeedSizeInBytes];
-#if NET_2_0 || NET_CF_2_0
+#if NET_2_0 || NETCF_2_0
 			var rng = System.Security.Cryptography.RandomNumberGenerator.Create();
 			rng.GetBytes(seed);
 #else
