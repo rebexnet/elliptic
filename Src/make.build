@@ -14,8 +14,10 @@
     
     <target name="help">
         <echo message="Usage:" />
-        <echo message="  (dos)make bin         Build packages" />
-        <echo message="  (dos)make clean       Clean build directories" />
+        <echo message="  nant restore     Restore dependencies and submodules" />
+        <echo message="  nant bin         Build packages" />
+        <echo message="  nant bin.cf      Build packages for .NET CF" />
+        <echo message="  nant clean       Clean build directories" />
     </target>
 
     <target name="clean">
