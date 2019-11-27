@@ -8,7 +8,13 @@
     <owners>Rebex CR, s.r.o.</owners>
     <license type="file">LICENSE.txt</license>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <description>Wrapper around BouncyCastle library that provides a simple API for Elliptic Curve algorithms.</description>
+    <description>
+      Managed implementation of ECDH key exchange and ECDSA signature algorithms with a simple API.
+      Based on https://www.bouncycastle.org/csharp/
+
+      Suitable for stand-alone usage or as a plugin for Rebex components.
+      (See https://labs.rebex.net/curves for usage instructions.)
+    </description>
     <tags>ECC ECDH brainpool nistp256 nistp384 nistp521 elliptic cryptography Diffie-Hellman</tags>
     <projectUrl>https://labs.rebex.net/curves</projectUrl>
     <dependencies>
@@ -21,10 +27,9 @@
         <dependency id="NETStandard.Library" version="[1.6.1, )" />
         <dependency id="Portable.BouncyCastle" version="1.8.1.2" />
       </group>
+      <group targetFramework="Xamarin.iOS1.0" />
+      <group targetFramework="MonoAndroid4.0" />
     </dependencies>
-    <frameworkAssemblies>
-      <frameworkAssembly assemblyName="mscorlib" targetFramework=".NETPortable4.0-Profile5" />
-    </frameworkAssemblies>
   </metadata>
   <files>
     <file src="LICENSE.txt" target="" />

@@ -8,7 +8,13 @@
     <owners>Rebex CR, s.r.o.</owners>
     <license type="file">LICENSE.txt</license>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <description>Managed implementation of Ed25519 digital signature algorithm.</description>
+    <description>
+      Managed implementation of Ed25519 signature algorithm with a simple API.
+      Based on https://github.com/CodesInChaos/Chaos.NaCl
+
+      Suitable for stand-alone usage or as a plugin for Rebex components.
+      (See https://labs.rebex.net/curves for usage instructions.)
+    </description>
     <projectUrl>https://labs.rebex.net/curves</projectUrl>
     <tags>25519 ECC ed25519 elliptic cryptography</tags>
     <dependencies>
@@ -20,11 +26,9 @@
       <group targetFramework=".NETStandard1.5">
         <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
       </group>
+      <group targetFramework="Xamarin.iOS1.0" />
+      <group targetFramework="MonoAndroid4.0" />
     </dependencies>
-    <frameworkAssemblies>
-      <frameworkAssembly assemblyName="mscorlib" targetFramework=".NETFramework2.0" />
-      <frameworkAssembly assemblyName="mscorlib" targetFramework=".NETFramework4.0" />
-    </frameworkAssemblies>
   </metadata>
   <files>
     <file src="LICENSE.txt" target="" />

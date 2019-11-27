@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("Rebex.Ed25519")]
 [assembly: AssemblyProduct("Rebex.Ed25519")]
-[assembly: AssemblyCopyright("Copyright © Rebex.NET 2017")]
+[assembly: AssemblyCopyright("See LICENSE.txt")]
 [assembly: AssemblyVersion("1.0.0.0")]
 #endif
 

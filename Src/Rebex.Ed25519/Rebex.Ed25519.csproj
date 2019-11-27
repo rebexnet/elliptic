@@ -5,6 +5,7 @@
     <RootNamespace>Rebex.Security.Cryptography</RootNamespace>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>1701;1702;649;103;1591</NoWarn>
+    <Copyright>See LICENSE.txt</Copyright>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(TargetFramework)' == 'net20'">
