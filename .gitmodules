@@ -2,3 +2,8 @@
 	path = external/bouncyeccf
 	url = https://github.com/rebexnet/BouncyECCF.git
 	branch = master
+
+[submodule "external/Chaos.NaCl"]
+	path = external/Chaos.NaCl
+	url = https://github.com/CodesInChaos/Chaos.NaCl.git
+	branch = master

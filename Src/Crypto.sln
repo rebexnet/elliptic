@@ -3,13 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Rebex.Ed25519", "Rebex.Ed25519", "{E10A9049-B7EB-401B-BD48-D2C43E8B5AED}"
-	ProjectSection(SolutionItems) = preProject
-		Rebex.Ed25519\Rebex.Elliptic.Ed25519.nuspec = Rebex.Ed25519\Rebex.Elliptic.Ed25519.nuspec
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{CB5DDD83-A7E8-4D77-BA6F-771B63DBC904}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{A6A85FE4-2FCB-4B5A-90E4-B6ED248ACAD7}"
 	ProjectSection(SolutionItems) = preProject
 		make.build = make.build
@@ -23,17 +16,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuspec", "nuspec", "{C588C9
 		Rebex.Ed25519\Rebex.Elliptic.Ed25519.nuspec = Rebex.Ed25519\Rebex.Elliptic.Ed25519.nuspec
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Rebex.Ed25519", "Rebex.Ed25519\Rebex.Ed25519.vcxproj", "{E9E87336-F755-44FE-BFE7-8B601181FADC}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Rebex.Ed25519.Core", "Rebex.Ed25519\Rebex.Ed25519.Core.vcxproj", "{6776DD78-76B6-45AB-A1B4-5E02F690937F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoShim", "CryptoShim\CryptoShim.csproj", "{826876FB-4E68-4BCF-96A9-990ACC187E03}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Retarget", "Retarget\Retarget.csproj", "{F3F0BEE6-6044-47CD-8607-7F2270570DBB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rebex.Castle", "Rebex.Castle\Rebex.Castle.csproj", "{66FCF1AB-1CDA-4465-A40F-4E404E4CB402}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rebex.Curve25519", "Rebex.Curve25519\Rebex.Curve25519.csproj", "{CFA77D07-1A39-4635-882B-4A45DA7D40BC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rebex.Ed25519", "Rebex.Ed25519\Rebex.Ed25519.csproj", "{45BD2BF0-7A5F-4081-9A39-255131E23703}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,18 +30,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E9E87336-F755-44FE-BFE7-8B601181FADC}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{E9E87336-F755-44FE-BFE7-8B601181FADC}.Debug|Any CPU.Build.0 = Debug|Win32
-		{E9E87336-F755-44FE-BFE7-8B601181FADC}.Release|Any CPU.ActiveCfg = Release|Win32
-		{E9E87336-F755-44FE-BFE7-8B601181FADC}.Release|Any CPU.Build.0 = Release|Win32
-		{6776DD78-76B6-45AB-A1B4-5E02F690937F}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{6776DD78-76B6-45AB-A1B4-5E02F690937F}.Debug|Any CPU.Build.0 = Debug|Win32
-		{6776DD78-76B6-45AB-A1B4-5E02F690937F}.Release|Any CPU.ActiveCfg = Release|Win32
-		{6776DD78-76B6-45AB-A1B4-5E02F690937F}.Release|Any CPU.Build.0 = Release|Win32
-		{826876FB-4E68-4BCF-96A9-990ACC187E03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{826876FB-4E68-4BCF-96A9-990ACC187E03}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{826876FB-4E68-4BCF-96A9-990ACC187E03}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{826876FB-4E68-4BCF-96A9-990ACC187E03}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F3F0BEE6-6044-47CD-8607-7F2270570DBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F3F0BEE6-6044-47CD-8607-7F2270570DBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3F0BEE6-6044-47CD-8607-7F2270570DBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -65,14 +42,15 @@ Global
 		{CFA77D07-1A39-4635-882B-4A45DA7D40BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFA77D07-1A39-4635-882B-4A45DA7D40BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFA77D07-1A39-4635-882B-4A45DA7D40BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45BD2BF0-7A5F-4081-9A39-255131E23703}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45BD2BF0-7A5F-4081-9A39-255131E23703}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45BD2BF0-7A5F-4081-9A39-255131E23703}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45BD2BF0-7A5F-4081-9A39-255131E23703}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{E9E87336-F755-44FE-BFE7-8B601181FADC} = {E10A9049-B7EB-401B-BD48-D2C43E8B5AED}
-		{6776DD78-76B6-45AB-A1B4-5E02F690937F} = {E10A9049-B7EB-401B-BD48-D2C43E8B5AED}
-		{826876FB-4E68-4BCF-96A9-990ACC187E03} = {CB5DDD83-A7E8-4D77-BA6F-771B63DBC904}
 		{F3F0BEE6-6044-47CD-8607-7F2270570DBB} = {A6A85FE4-2FCB-4B5A-90E4-B6ED248ACAD7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

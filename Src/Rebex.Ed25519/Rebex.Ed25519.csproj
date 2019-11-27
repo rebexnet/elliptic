@@ -1,0 +1,74 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net20;net40;netstandard1.5;netstandard2.0</TargetFrameworks>
+    <RootNamespace>Rebex.Security.Cryptography</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>1701;1702;649;103;1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net20'">
+    <DefineConstants>$(DefineConstants);NET_2_0</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\CryptoBytes.cs" Link="Chaos.NaCl\CryptoBytes.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Ed25519.cs" Link="Chaos.NaCl\Ed25519.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Array16.cs" Link="Chaos.NaCl\Internal\Array16.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Array8.cs" Link="Chaos.NaCl\Internal\Array8.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\ByteIntegerConverter.cs" Link="Chaos.NaCl\Internal\ByteIntegerConverter.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\base.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\base.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\base2.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\base2.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\d.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\d.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\d2.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\d2.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\fe_0.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\fe_0.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\fe_1.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\fe_1.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\fe_add.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\fe_add.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\fe_cmov.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\fe_cmov.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\fe_cswap.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\fe_cswap.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\fe_frombytes.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\fe_frombytes.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\fe_invert.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\fe_invert.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\fe_isnegative.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\fe_isnegative.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\fe_isnonzero.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\fe_isnonzero.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\fe_mul.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\fe_mul.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\fe_mul121666.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\fe_mul121666.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\fe_neg.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\fe_neg.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\fe_pow22523.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\fe_pow22523.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\fe_sq.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\fe_sq.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\fe_sq2.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\fe_sq2.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\fe_sub.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\fe_sub.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\fe_tobytes.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\fe_tobytes.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\FieldElement.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\FieldElement.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\ge_add.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\ge_add.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\ge_double_scalarmult.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\ge_double_scalarmult.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\ge_frombytes.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\ge_frombytes.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\ge_madd.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\ge_madd.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\ge_msub.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\ge_msub.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\ge_p1p1_to_p2.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\ge_p1p1_to_p2.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\ge_p1p1_to_p3.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\ge_p1p1_to_p3.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\ge_p2_0.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\ge_p2_0.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\ge_p2_dbl.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\ge_p2_dbl.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\ge_p3_0.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\ge_p3_0.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\ge_p3_dbl.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\ge_p3_dbl.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\ge_p3_tobytes.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\ge_p3_tobytes.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\ge_p3_to_cached.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\ge_p3_to_cached.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\ge_p3_to_p2.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\ge_p3_to_p2.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\ge_precomp_0.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\ge_precomp_0.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\ge_scalarmult_base.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\ge_scalarmult_base.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\ge_sub.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\ge_sub.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\ge_tobytes.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\ge_tobytes.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\GroupElement.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\GroupElement.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\keypair.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\keypair.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\open.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\open.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\scalarmult.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\scalarmult.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\sc_clamp.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\sc_clamp.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\sc_mul_add.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\sc_mul_add.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\sc_reduce.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\sc_reduce.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\sign.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\sign.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Ed25519Ref10\sqrtm1.cs" Link="Chaos.NaCl\Internal\Ed25519Ref10\sqrtm1.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\InternalAssert.cs" Link="Chaos.NaCl\Internal\InternalAssert.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Internal\Sha512Internal.cs" Link="Chaos.NaCl\Internal\Sha512Internal.cs" />
+    <Compile Include="..\..\external\Chaos.NaCl\Chaos.NaCl\Sha512.cs" Link="Chaos.NaCl\Sha512.cs" />
+  </ItemGroup>
+  
+</Project>
