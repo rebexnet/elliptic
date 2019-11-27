@@ -6,7 +6,8 @@
     <version>1.0.0</version>
     <authors>Rebex CR, s.r.o.</authors>
     <owners>Rebex CR, s.r.o.</owners>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="file">LICENSE.txt</license>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Managed implementation of Ed25519 digital signature algorithm.</description>
     <projectUrl>https://labs.rebex.net/curves</projectUrl>
     <tags>25519 ECC ed25519 elliptic cryptography</tags>
@@ -25,4 +26,7 @@
       <frameworkAssembly assemblyName="mscorlib" targetFramework=".NETFramework4.0" />
     </frameworkAssemblies>
   </metadata>
+  <files>
+    <file src="LICENSE.txt" target="" />
+  </files>
 </package>

@@ -121,6 +121,8 @@
 
             <copy file="../tmp/Rebex.${module}/lib/monoandroid40/Rebex.${module}.dll" todir="../tmp/Rebex.${module}/lib/xamarinios10" />
             <copy file="Rebex.${module}/bin/Release/net40/Rebex.${module}.xml" todir="../tmp/Rebex.${module}/lib/xamarinios10" />
+
+            <copy file="Rebex.${module}/LICENSE.txt" todir="../tmp/Rebex.${module}" />
                 
             <exec program="nuget" workingdir="Rebex.${module}" commandline="pack Rebex.Elliptic.${module}.nuspec -BasePath ../../tmp/Rebex.${module} -OutputDirectory ../../out" />
 
