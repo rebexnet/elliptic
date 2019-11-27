@@ -37,8 +37,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rebex.Castle", "Rebex.Castl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rebex.Curve25519", "Rebex.Curve25519\Rebex.Curve25519.csproj", "{CFA77D07-1A39-4635-882B-4A45DA7D40BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebex.Castle.Portable", "Rebex.Castle.Portable\Rebex.Castle.Portable.csproj", "{4E5CBE18-1E8B-4B9D-8EDF-85851334402C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,10 +71,6 @@ Global
 		{CFA77D07-1A39-4635-882B-4A45DA7D40BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFA77D07-1A39-4635-882B-4A45DA7D40BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFA77D07-1A39-4635-882B-4A45DA7D40BC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4E5CBE18-1E8B-4B9D-8EDF-85851334402C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4E5CBE18-1E8B-4B9D-8EDF-85851334402C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4E5CBE18-1E8B-4B9D-8EDF-85851334402C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4E5CBE18-1E8B-4B9D-8EDF-85851334402C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
