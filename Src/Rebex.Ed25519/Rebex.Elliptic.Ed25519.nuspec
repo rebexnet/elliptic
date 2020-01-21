@@ -3,20 +3,31 @@
   <metadata>
     <id>Rebex.Elliptic.Ed25519</id>
     <title>Rebex.Elliptic.Ed25519</title>
-    <version>1.0.0</version>
+    <version>1.2.0</version>
     <authors>Rebex CR, s.r.o.</authors>
     <owners>Rebex CR, s.r.o.</owners>
     <license type="file">LICENSE.txt</license>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>
-      Managed implementation of Ed25519 signature algorithm with a simple API.
-      Based on https://github.com/CodesInChaos/Chaos.NaCl
+Managed implementation of Ed25519 signature algorithm with a simple API.
+Based on https://github.com/CodesInChaos/Chaos.NaCl
 
-      Suitable for stand-alone usage or as a plugin for Rebex components.
-      (See https://labs.rebex.net/curves for usage instructions.)
+Suitable for stand-alone usage or as a plugin for Rebex components.
+See https://labs.rebex.net/curves for usage instructions.
+
+Supported platforms:
+- .NET Framework 4.0-4.8
+- .NET Framework 2.0-3.5 SP1
+- .NET Core 2.0-3.1 (via .NET Standard 2.0)
+- .NET Core 1.0-1.1 (via .NET Standard 1.5)
+- Xamarin.iOS (10 and higher)
+- Xamarin.Android (9 and higher)
+- Mono 4.x, 5.x, 6.x
+- Universal Windows Platform build 16299 and higher (via .NET Standard 2.0)
+- Xamarin.Mac (via .NET Standard 2.0)
     </description>
     <projectUrl>https://labs.rebex.net/curves</projectUrl>
-    <tags>25519 ECC ed25519 elliptic cryptography</tags>
+    <tags>EdDSA 25519 ECC ed25519 elliptic curve cryptography</tags>
     <dependencies>
       <group targetFramework=".NETFramework2.0" />
       <group targetFramework=".NETFramework4.0" />
@@ -32,5 +43,6 @@
   </metadata>
   <files>
     <file src="LICENSE.txt" target="" />
+    <file src="lib/**" target="" />
   </files>
 </package>
