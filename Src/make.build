@@ -68,13 +68,13 @@
                 <include name="README.*" />
             </fileset>
             <fileset basedir="../src/Rebex.Castle" prefix="licenses/Rebex.Castle">
-                <include name="LICENSE" />
+                <include name="LICENSE.txt" />
             </fileset>
             <fileset basedir="../src/Rebex.Curve25519" prefix="licenses/Rebex.Curve25519">
-                <include name="LICENSE" />
+                <include name="LICENSE.txt" />
             </fileset>
             <fileset basedir="../src/Rebex.Ed25519" prefix="licenses/Rebex.Ed25519">
-                <include name="LICENSE" />
+                <include name="LICENSE.txt" />
             </fileset>
         </zip>
     </target>
@@ -158,13 +158,13 @@
                 <include name="README.*" />
             </fileset>
             <fileset basedir="../src/Rebex.Castle" prefix="licenses/Rebex.Castle">
-                <include name="LICENSE" />
+                <include name="LICENSE.txt" />
             </fileset>
             <fileset basedir="../src/Rebex.Curve25519" prefix="licenses/Rebex.Curve25519">
-                <include name="LICENSE" />
+                <include name="LICENSE.txt" />
             </fileset>
             <fileset basedir="../src/Rebex.Ed25519" prefix="licenses/Rebex.Ed25519">
-                <include name="LICENSE" />
+                <include name="LICENSE.txt" />
             </fileset>
         </zip>
 
