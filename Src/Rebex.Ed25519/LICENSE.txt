@@ -1,7 +1,7 @@
 
 Public domain
 
-Thin wrapper API by Rebex CR, s.r.o. (https://labs.rebex.net/curves/)
+Thin wrapper API by Rebex CR, s.r.o. (www.rebex.net)
 C# port + code by Christian Winnerlein (CodesInChaos)
 
 Curve25519 and Ed25519 in c

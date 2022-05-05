@@ -8,12 +8,13 @@
     <owners>Rebex CR, s.r.o.</owners>
     <license type="file">LICENSE.txt</license>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <projectUrl>https://www.rebex.net/kb/simple-elliptic-curve-libraries/</projectUrl>
     <description>
 Managed implementation of Curve25519 key exchange algorithm with a simple API.
 Based on https://github.com/hanswolff/curve25519
 
 Suitable for stand-alone usage or as a plugin for Rebex components.
-See https://labs.rebex.net/curves for usage instructions.
+See https://www.rebex.net/kb/simple-elliptic-curve-libraries/ for usage instructions.
 
 Supported platforms:
 - .NET Framework 4.0-4.8
@@ -26,7 +27,6 @@ Supported platforms:
 - Universal Windows Platform build 16299 and higher (via .NET Standard 2.0)
 - Xamarin.Mac (via .NET Standard 2.0)
     </description>
-    <projectUrl>https://labs.rebex.net/curves</projectUrl>
     <tags>ECDH 25519 ECC curve25519 elliptic curve cryptography</tags>
     <dependencies>
       <group targetFramework=".NETFramework2.0" />

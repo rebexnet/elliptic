@@ -4,14 +4,14 @@ Elliptic Curve Cryptography (ECC) is an attractive alternative to classic public
 
 Unfortunately, built-in support for ECC algorithms in Microsoft Windows and .NET Framework is very limited. The only supported ECC algorithms are Elliptic Curve DSA (ECDSA) and Elliptic Curve Diffie Hellman (ECDH) based on NIST P-256, P-384 and P-521 curves. Additionally, MS CNG API is rather limited and its implementation of Elliptic Curve Diffie Hellman is not quite suitable for SSH due to lack of support for compatible shared secret padding methods. On top of this, there is a bug in MS CNG implementation of ECDH related to handling of shared secret padding, which can occasionally lead to TLS/SSL negotiation failures.
 
-To work around these limitations, we provide a set of assemblies that provide a simple-to-use API on top of thrid-party ECC libraries. See [Rebex Labs](//labs.rebex.net/curves) for details, including a  list of supported algorithms and platforms.
+To work around these limitations, we provide a set of assemblies that provide a simple-to-use API on top of thrid-party ECC libraries. See [Rebex Labs](https://www.rebex.net/kb/simple-elliptic-curve-libraries/) for details, including a  list of supported algorithms and platforms.
 
 ## Credentials
 
 These assemblies are based on:
 - [Curve25519 library](//github.com/hanswolff/curve25519) by Hans Wolff, based on previous work by Dmitry Skiba [sahn0] and Matthijs van Duin.
 - [Ed25519 library](//github.com/CodesInChaos/Chaos.NaCl) by Christian Winnerlein (CodesInChaos), based on the SUPERCOP "ref10" implementation.
-- [BouncyCastle APIs](//hwww.bouncycastle.org/) by the Legion of the Bouncy Castle Inc.
+- [BouncyCastle APIs](//www.bouncycastle.org/) by the Legion of the Bouncy Castle Inc.
 
 ## Disclaimer
 
@@ -28,7 +28,7 @@ PM> Install-Package Rebex.Elliptic.Castle
 
 ## Usage within Rebex components
 
-To use these assemblies as [plugins for Rebex components](//www.rebex.net/kb/elliptic-curve-plugins/), add the following code to register them:
+To use these assemblies as [plugins for Rebex components](https://www.rebex.net/kb/simple-elliptic-curve-libraries/), add the following code to register them:
 
 ```csharp
 // import NISTP and Brainpool curves
