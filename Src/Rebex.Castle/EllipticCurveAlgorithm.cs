@@ -17,47 +17,62 @@ namespace Rebex.Security.Cryptography
 	{
 		#region consts
 		/// <summary>
-		/// 256-bit NIST curve P-256
+		/// ECDSA with 256-bit ECC Brainpool curve brainpoolP256r1.
+		/// </summary>
+		public const string EcDsaSha2BrainpoolP256R1 = "ecdsa-sha2-brainpoolp256r1";
+
+		/// <summary>
+		/// ECDSA with 384-bit ECC Brainpool curve brainpoolP384r1.
+		/// </summary>
+		public const string EcDsaSha2BrainpoolP384R1 = "ecdsa-sha2-brainpoolp384r1";
+
+		/// <summary>
+		/// ECDSA with 512-bit ECC Brainpool curve brainpoolP512r1.
+		/// </summary>
+		public const string EcDsaSha2BrainpoolP512R1 = "ecdsa-sha2-brainpoolp512r1";
+
+		/// <summary>
+		/// ECDSA with 256-bit NIST curve P-256.
 		/// </summary>
 		public const string EcDsaSha2Nistp256 = "ecdsa-sha2-nistp256";
 
 		/// <summary>
-		/// 384-bit NIST curve P-384
+		/// ECDSA with 384-bit NIST curve P-384.
 		/// </summary>
 		public const string EcDsaSha2Nistp384 = "ecdsa-sha2-nistp384";
 
 		/// <summary>
-		/// 521-bit NIST curve P-521
+		/// ECDSA with 521-bit NIST curve P-521.
 		/// </summary>
 		public const string EcDsaSha2Nistp521 = "ecdsa-sha2-nistp521";
 
 		/// <summary>
-		/// 256-bit ECC Brainpool curve brainpoolP256r1
+		/// Elliptic Curve Diffie-Hellman with 256-bit ECC Brainpool curve brainpoolP256r1.
 		/// </summary>
 		public const string EcdhSha2BrainpoolP256R1 = "ecdh-sha2-brainpoolp256r1";
 
 		/// <summary>
-		/// 384-bit ECC Brainpool curve brainpoolP384r1
+		/// Elliptic Curve Diffie-Hellman with 384-bit ECC Brainpool curve brainpoolP384r1.
 		/// </summary>
 		public const string EcdhSha2BrainpoolP384R1 = "ecdh-sha2-brainpoolp384r1";
 
 		/// <summary>
-		/// 512-bit ECC Brainpool curve brainpoolP512r1
+		/// Elliptic Curve Diffie-Hellman with 512-bit ECC Brainpool curve brainpoolP512r1.
 		/// </summary>
 		public const string EcdhSha2BrainpoolP512R1 = "ecdh-sha2-brainpoolp512r1";
 
 		/// <summary>
-		/// 256-bit NIST curve P-256
+		/// Elliptic Curve Diffie-Hellman with 256-bit NIST curve P-256.
 		/// </summary>
 		public const string EcdhSha2Nistp256 = "ecdh-sha2-nistp256";
 
 		/// <summary>
-		/// 384-bit NIST curve P-384
+		/// Elliptic Curve Diffie-Hellman with 384-bit NIST curve P-384.
 		/// </summary>
 		public const string EcdhSha2Nistp384 = "ecdh-sha2-nistp384";
 
 		/// <summary>
-		/// 521-bit NIST curve P-521
+		/// Elliptic Curve Diffie-Hellman with 521-bit NIST curve P-521.
 		/// </summary>
 		public const string EcdhSha2Nistp521 = "ecdh-sha2-nistp521";
 		#endregion
@@ -123,6 +138,9 @@ namespace Rebex.Security.Cryptography
 		{
 			switch (algName.ToLower())
 			{
+				case EcDsaSha2BrainpoolP256R1: return new EllipticCurveDsa("1.3.36.3.3.2.8.1.1.7", "brainpoolp256r1");
+				case EcDsaSha2BrainpoolP384R1: return new EllipticCurveDsa("1.3.36.3.3.2.8.1.1.11", "brainpoolp384r1");
+				case EcDsaSha2BrainpoolP512R1: return new EllipticCurveDsa("1.3.36.3.3.2.8.1.1.13", "brainpoolp512r1");
 				case EcDsaSha2Nistp256: return new EllipticCurveDsa("1.2.840.10045.3.1.7", "nistp256");
 				case EcDsaSha2Nistp384: return new EllipticCurveDsa("1.3.132.0.34", "nistp384");
 				case EcDsaSha2Nistp521: return new EllipticCurveDsa("1.3.132.0.35", "nistp521");
