@@ -3,9 +3,9 @@
   <metadata>
     <id>Rebex.Elliptic.Curve25519</id>
     <title>Rebex.Elliptic.Curve25519</title>
-    <version>1.2.0</version>
-    <authors>Rebex CR, s.r.o.</authors>
-    <owners>Rebex CR, s.r.o.</owners>
+    <version>1.2.2</version>
+    <authors>REBEX ČR s.r.o.</authors>
+    <owners>REBEX ČR s.r.o.</owners>
     <license type="file">LICENSE.txt</license>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <projectUrl>https://www.rebex.net/kb/simple-elliptic-curve-libraries/</projectUrl>
@@ -17,9 +17,11 @@ Suitable for stand-alone usage or as a plugin for Rebex components.
 See https://www.rebex.net/kb/simple-elliptic-curve-libraries/ for usage instructions.
 
 Supported platforms:
+- .NET 6/8
 - .NET Framework 4.0-4.8
 - .NET Framework 2.0-3.5 SP1
-- .NET Core 2.0-3.1 (via .NET Standard 2.0)
+- .NET Core 3.0-3.1 (via .NET Standard 2.1)
+- .NET Core 2.0-2.2 (via .NET Standard 2.0)
 - .NET Core 1.0-1.1 (via .NET Standard 1.5)
 - Xamarin.iOS (10 and higher)
 - Xamarin.Android (9 and higher)
@@ -29,11 +31,12 @@ Supported platforms:
     </description>
     <tags>ECDH 25519 ECC curve25519 elliptic curve cryptography</tags>
     <dependencies>
-      <group targetFramework=".NETFramework2.0" />
+      <group targetFramework="net8.0" />
+      <group targetFramework="net6.0" />
       <group targetFramework=".NETFramework4.0" />
-      <group targetFramework=".NETStandard2.0">
-        <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
-      </group>
+      <group targetFramework=".NETFramework2.0" />
+      <group targetFramework=".NETStandard2.1" />
+      <group targetFramework=".NETStandard2.0" />
       <group targetFramework=".NETStandard1.5">
         <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
       </group>

@@ -5,8 +5,8 @@
     <property name="keyfile" readonly="true" unless="${property::exists('keyfile')}" value="c:\data\RebexKey.snk" />
     
     <!-- replace by vswhere once it gets nuget-packaged -->
-    <property name="vspath.15" readonly="true" value="c:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin" />
-    <property name="msbuild.15.exe" readonly="true" value="${vspath.15}\MSBuild.exe" />
+    <property name="vspath.16" readonly="true" value="c:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\MSBuild\Current\Bin" />
+    <property name="msbuild.16.exe" readonly="true" value="${vspath.16}\MSBuild.exe" />
     <property name="msbuild.3.5.exe" readonly="true" value="c:\Windows\Microsoft.NET\Framework\v3.5\MSBuild.exe" />
     <property name="msbuild.common.params" readonly="true" value="/p:Configuration=Release /verbosity:minimal /nologo /p:SignAssembly=true /p:AssemblyOriginatorKeyFile=${keyfile}" />
     
@@ -90,10 +90,7 @@
         <echo message="Building..." />
 
         <foreach item="String" in="Castle;Curve25519;Ed25519" delim=";" property="module">
-            <exec program="${msbuild.15.exe}" workingdir="Rebex.${module}" commandline="Rebex.${module}.csproj /p:TargetFramework=net20 ${msbuild.common.params}" />
-            <exec program="dotnet" workingdir="Rebex.${module}" commandline="build Rebex.${module}.csproj -c Release -f netstandard2.0 /p:SignAssembly=true /p:AssemblyOriginatorKeyFile=${keyfile}" />
-            <exec program="dotnet" workingdir="Rebex.${module}" commandline="build Rebex.${module}.csproj -c Release -f netstandard1.5 /p:SignAssembly=true /p:AssemblyOriginatorKeyFile=${keyfile}" />
-            <exec program="dotnet" workingdir="Rebex.${module}" commandline="build Rebex.${module}.csproj -c Release -f net40 /p:SignAssembly=true /p:AssemblyOriginatorKeyFile=${keyfile}" />
+            <exec program="dotnet" workingdir="Rebex.${module}" commandline="build Rebex.${module}.csproj -c Release /p:SignAssembly=true /p:AssemblyOriginatorKeyFile=${keyfile}" />
         
             <copy todir="../tmp/Rebex.${module}/lib">
                 <fileset basedir="Rebex.${module}/bin/Release">
@@ -101,7 +98,7 @@
                 </fileset>
             </copy>
 
-            <foreach item="String" in="net20;net40;netstandard1.5;netstandard2.0" delim=";" property="platform">
+            <foreach item="String" in="net20;net40;netstandard1.5;netstandard2.0;netstandard2.1;net6.0;net8.0" delim=";" property="platform">
                 <exec program="${retarget.exe}" verbose="false" workingdir="Rebex.${module}">
                     <arg value="bin/Release/${platform}/Rebex.${module}.dll" />
                     <arg value="../../tmp/Rebex.${module}/lib/${platform}/Rebex.${module}.dll" />

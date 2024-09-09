@@ -1,11 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net20;net40;netstandard1.5;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>net20;net40;netstandard1.5;netstandard2.0;netstandard2.1;net6.0;net8.0</TargetFrameworks>
     <RootNamespace>Rebex.Security.Cryptography</RootNamespace>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>1701;1702;649;103;1591</NoWarn>
     <Copyright>See LICENSE.txt</Copyright>
+    <CheckNotRecommendedTargetFramework>false</CheckNotRecommendedTargetFramework>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(TargetFramework)' == 'net20'">
